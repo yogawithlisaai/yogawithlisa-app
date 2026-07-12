@@ -1,0 +1,236 @@
+[
+  {
+    "id": "avocado-mousse",
+    "title": "Chocolate Avocado Mousse",
+    "photo": "/recipes/avocado-mousse.png",
+    "tags": ["vegan", "gluten-free", "dessert", "no-bake"],
+    "description": "A silky, naturally sweetened mousse made from ripe avocado — rich, cool, and topped with fresh strawberry.",
+    "ingredients": [
+      "2 ripe avocados",
+      "1/4 cup maple syrup",
+      "1/4 cup cacao powder",
+      "1 tsp vanilla extract",
+      "pinch of sea salt",
+      "2 tbsp almond milk (as needed)",
+      "fresh strawberries, to garnish"
+    ],
+    "steps": [
+      "Scoop avocado flesh into a food processor.",
+      "Add maple syrup, cacao powder, vanilla, and sea salt.",
+      "Blend until completely smooth, scraping down sides as needed.",
+      "Add almond milk a tablespoon at a time if too thick.",
+      "Chill for 20 minutes, then serve topped with sliced strawberry."
+    ]
+  },
+  {
+    "id": "dragonfruit-pancakes",
+    "title": "Dragon Fruit Pink Pancakes",
+    "photo": "/recipes/dragonfruit-pancakes.png",
+    "tags": ["vegan", "gluten-free", "breakfast"],
+    "description": "Fluffy naturally-pink pancakes colored with dragon fruit, served with fresh dragon fruit salad and mint.",
+    "ingredients": [
+      "1 cup gluten-free flour blend",
+      "1 tbsp dragon fruit powder (or 1/4 cup fresh dragon fruit, pureed)",
+      "1 tbsp maple syrup",
+      "1 tsp baking powder",
+      "3/4 cup plant milk",
+      "1 tbsp coconut oil, melted",
+      "diced dragon fruit and mint, to serve"
+    ],
+    "steps": [
+      "Whisk dry ingredients together in a bowl.",
+      "Add plant milk, dragon fruit puree/powder, maple syrup, and melted coconut oil.",
+      "Mix until just combined — do not overmix.",
+      "Cook 1/4-cup portions on a lightly oiled skillet, 2-3 minutes per side.",
+      "Serve topped with diced dragon fruit and fresh mint."
+    ]
+  },
+  {
+    "id": "turmeric-tofu-scramble",
+    "title": "Turmeric Tofu Scramble",
+    "photo": "/recipes/turmeric-tofu-scramble.png",
+    "tags": ["vegan", "gluten-free", "breakfast", "high-protein"],
+    "description": "A golden, savory tofu scramble spiced with turmeric and black salt, finished with fresh tomato and parsley.",
+    "ingredients": [
+      "1 block firm tofu, crumbled",
+      "1 tsp ground turmeric",
+      "1/2 tsp black salt (kala namak)",
+      "1/2 tsp garlic powder",
+      "1 tbsp olive oil",
+      "1/2 cup cherry tomatoes, sliced",
+      "fresh parsley, to garnish"
+    ],
+    "steps": [
+      "Heat olive oil in a skillet over medium heat.",
+      "Add crumbled tofu, turmeric, black salt, and garlic powder.",
+      "Cook, stirring occasionally, for 6-8 minutes until lightly golden.",
+      "Fold in sliced tomatoes for the last minute of cooking.",
+      "Plate and garnish with fresh parsley."
+    ]
+  },
+  {
+    "id": "golden-tofu-scramble",
+    "title": "Garden Turmeric Scramble Bowl",
+    "photo": "/recipes/golden-tofu-scramble.png",
+    "tags": ["vegan", "gluten-free", "breakfast", "high-protein"],
+    "description": "The same golden turmeric scramble, served family-style with extra herbs — a grounding start to any morning practice.",
+    "ingredients": [
+      "1 block firm tofu, crumbled",
+      "1 tsp ground turmeric",
+      "1/2 tsp smoked paprika",
+      "1 tbsp nutritional yeast",
+      "1 tbsp olive oil",
+      "handful cherry tomatoes, halved",
+      "fresh parsley and cilantro, to garnish"
+    ],
+    "steps": [
+      "Heat olive oil in a wide pan over medium heat.",
+      "Crumble in the tofu and sprinkle with turmeric, smoked paprika, and nutritional yeast.",
+      "Cook for 7-9 minutes, stirring gently, until warmed through and lightly crisp at the edges.",
+      "Toss in cherry tomatoes just before serving.",
+      "Top generously with fresh herbs and serve warm."
+    ]
+  },
+  {
+    "id": "cinnamon-spice-loaf",
+    "title": "Cinnamon Spice Loaf",
+    "photo": "/recipes/cinnamon-spice-loaf.png",
+    "tags": ["vegan", "gluten-free", "dessert", "snack"],
+    "description": "A warmly spiced, gluten-free tea loaf with cinnamon and sesame, sliced and finished with strawberry and mint.",
+    "ingredients": [
+      "1 3/4 cups gluten-free flour blend",
+      "1 tsp baking soda",
+      "2 tsp ground cinnamon",
+      "1/2 cup coconut sugar",
+      "1/3 cup melted coconut oil",
+      "1 cup plant milk + 1 tsp apple cider vinegar",
+      "1 tbsp sesame seeds"
+    ],
+    "steps": [
+      "Preheat oven to 350°F (175°C) and line a loaf pan.",
+      "Combine plant milk and vinegar, set aside to curdle slightly.",
+      "Whisk dry ingredients together in a large bowl.",
+      "Add wet ingredients and melted coconut oil, stir until just combined.",
+      "Pour into loaf pan, top with sesame seeds, and bake 45-50 minutes.",
+      "Cool fully before slicing; serve with fresh strawberry and mint."
+    ]
+  },
+  {
+    "id": "lemon-olive-oil-cake",
+    "title": "Lemon Olive Oil Cake",
+    "photo": "/recipes/lemon-olive-oil-cake.png",
+    "tags": ["vegan", "gluten-free", "dessert"],
+    "description": "A bright, moist gluten-free olive oil cake with fresh lemon, delicate and not-too-sweet.",
+    "ingredients": [
+      "2 cups gluten-free flour blend",
+      "3/4 cup extra virgin olive oil",
+      "3/4 cup coconut sugar",
+      "zest and juice of 2 lemons",
+      "1 cup plant milk",
+      "1 tsp baking powder",
+      "1/2 tsp baking soda"
+    ],
+    "steps": [
+      "Preheat oven to 350°F (175°C) and grease a loaf pan.",
+      "Whisk olive oil, coconut sugar, lemon zest, and lemon juice together.",
+      "Add plant milk and whisk to combine.",
+      "Fold in flour, baking powder, and baking soda until just combined.",
+      "Pour into pan and bake 40-45 minutes until golden and set.",
+      "Cool, slice, and top with fresh strawberry."
+    ]
+  },
+  {
+    "id": "vanilla-sesame-loaf",
+    "title": "Vanilla Sesame Loaf",
+    "photo": "/recipes/vanilla-sesame-loaf.png",
+    "tags": ["vegan", "gluten-free", "dessert", "snack"],
+    "description": "A soft, subtly sweet vanilla loaf flecked with black sesame, finished with fresh strawberry, mint, and edible flowers.",
+    "ingredients": [
+      "1 3/4 cups gluten-free flour blend",
+      "1/2 cup coconut sugar",
+      "1/3 cup melted coconut oil",
+      "1 cup plant milk + 1 tsp apple cider vinegar",
+      "1 tbsp vanilla extract",
+      "1 tbsp black sesame seeds",
+      "1 tsp baking powder"
+    ],
+    "steps": [
+      "Preheat oven to 350°F (175°C) and line a loaf pan.",
+      "Combine plant milk and vinegar; let sit 5 minutes.",
+      "Whisk dry ingredients in a large bowl.",
+      "Add wet ingredients and vanilla, stirring until just combined.",
+      "Fold in black sesame seeds, reserving a pinch for topping.",
+      "Bake 45-50 minutes until a toothpick comes out clean. Cool, slice, and garnish."
+    ]
+  },
+  {
+    "id": "chai-spice-bread",
+    "title": "Chai Spice Bread",
+    "photo": "/recipes/chai-spice-bread.png",
+    "tags": ["vegan", "gluten-free", "dessert", "snack"],
+    "description": "A cozy chai-spiced quick bread with warming cardamom, ginger, and clove — perfect alongside tea after an evening practice.",
+    "ingredients": [
+      "1 3/4 cups gluten-free flour blend",
+      "1/2 cup coconut sugar",
+      "2 tsp chai spice blend (cinnamon, cardamom, ginger, clove)",
+      "1/3 cup melted coconut oil",
+      "1 cup plant milk + 1 tsp apple cider vinegar",
+      "1 tsp baking soda",
+      "sesame seeds, to top"
+    ],
+    "steps": [
+      "Preheat oven to 350°F (175°C) and line a loaf pan.",
+      "Combine plant milk and vinegar; set aside.",
+      "Whisk flour, coconut sugar, chai spices, and baking soda together.",
+      "Stir in wet ingredients until just combined.",
+      "Pour into pan, top with sesame seeds, and bake 45-50 minutes.",
+      "Cool before slicing and serving with fresh strawberry and mint."
+    ]
+  },
+  {
+    "id": "turmeric-carrot-elixir",
+    "title": "Turmeric Carrot Elixir",
+    "photo": "/recipes/turmeric-carrot-elixir.png",
+    "tags": ["vegan", "gluten-free", "drink"],
+    "description": "A bright, anti-inflammatory carrot and turmeric juice, sipped slow before or after practice.",
+    "ingredients": [
+      "4 large carrots, juiced",
+      "1 inch fresh turmeric root, juiced (or 1/2 tsp ground turmeric)",
+      "1 inch fresh ginger, juiced",
+      "juice of 1/2 orange",
+      "pinch of black pepper",
+      "fresh mint, to garnish"
+    ],
+    "steps": [
+      "Juice the carrots, turmeric, and ginger together.",
+      "Stir in fresh orange juice and a pinch of black pepper (helps absorb turmeric).",
+      "Pour over ice and garnish with fresh mint.",
+      "Sip slowly and enjoy."
+    ]
+  },
+  {
+    "id": "baked-lentil-bites",
+    "title": "Baked Lentil & Walnut Bites",
+    "photo": "/recipes/baked-lentil-bites.png",
+    "tags": ["vegan", "gluten-free", "high-protein", "snack"],
+    "description": "Savory baked lentil-walnut patties finished with a bright pepper garnish, served over crisp lettuce.",
+    "ingredients": [
+      "1 1/2 cups cooked lentils",
+      "1/2 cup walnuts, finely chopped",
+      "1/4 cup gluten-free oat flour",
+      "1 tbsp tahini",
+      "1 clove garlic, minced",
+      "1 tsp cumin",
+      "salt and pepper, to taste",
+      "diced red bell pepper and lettuce, to serve"
+    ],
+    "steps": [
+      "Preheat oven to 375°F (190°C) and line a baking sheet.",
+      "Mash lentils lightly, leaving some texture.",
+      "Mix in walnuts, oat flour, tahini, garlic, cumin, salt, and pepper.",
+      "Form into small patties and place on baking sheet.",
+      "Bake 20-25 minutes, flipping halfway, until firm and golden.",
+      "Serve over lettuce, topped with diced red bell pepper."
+    ]
+  }
+]

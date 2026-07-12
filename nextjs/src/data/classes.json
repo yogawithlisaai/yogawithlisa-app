@@ -1,0 +1,214 @@
+[
+  {
+    "category": "Featured Free Series",
+    "videos": [
+      {
+        "id": "free-1",
+        "title": "Grounded Mornings — Day 1: Arrive",
+        "description": "A gentle vertical-format flow to start your day grounded and present. Breath-led movement, soft joint mobility, and a calming close. Free for everyone.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 12,
+        "level": "Beginner",
+        "style": "Gentle Flow",
+        "tags": ["free", "morning", "grounding", "calm"],
+        "format": "vertical",
+        "free": true,
+        "featured": true
+      },
+      {
+        "id": "free-2",
+        "title": "Grounded Mornings — Day 2: Open",
+        "description": "Shoulder and hip openers to release overnight tension. Vertical format, filmed for phone-first practice anywhere.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 14,
+        "level": "Beginner",
+        "style": "Gentle Flow",
+        "tags": ["free", "morning", "mobility"],
+        "format": "vertical",
+        "free": true,
+        "featured": true
+      },
+      {
+        "id": "free-3",
+        "title": "Grounded Mornings — Day 3: Root",
+        "description": "Standing balance and grounding postures to build steadiness for the day ahead. Vertical format.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 15,
+        "level": "Beginner",
+        "style": "Gentle Flow",
+        "tags": ["free", "morning", "balance"],
+        "format": "vertical",
+        "free": true,
+        "featured": true
+      }
+    ]
+  },
+  {
+    "category": "Quick Resets",
+    "videos": [
+      {
+        "id": "reset-1",
+        "title": "5-Minute Desk Reset",
+        "description": "Neck, wrist, and spine relief you can do right at your desk. Perfect between meetings.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 5,
+        "level": "All Levels",
+        "style": "Chair Yoga",
+        "tags": ["quick", "desk", "stress-relief"],
+        "format": "horizontal",
+        "free": true,
+        "featured": false
+      },
+      {
+        "id": "reset-2",
+        "title": "10-Minute Anxiety Ease",
+        "description": "Slow breathwork and supported forward folds to calm the nervous system fast.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 10,
+        "level": "All Levels",
+        "style": "Restorative",
+        "tags": ["anxious", "calm", "breathwork"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      }
+    ]
+  },
+  {
+    "category": "Vinyasa Flow",
+    "videos": [
+      {
+        "id": "vin-1",
+        "title": "Energize & Flow",
+        "description": "A dynamic, breath-synced sequence to build heat and shake off sluggish energy.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 30,
+        "level": "Intermediate",
+        "style": "Vinyasa",
+        "tags": ["energized", "strength", "flow"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      },
+      {
+        "id": "vin-2",
+        "title": "Power Vinyasa: Full Body Burn",
+        "description": "An advanced heat-building practice with arm balances and core work.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 45,
+        "level": "Advanced",
+        "style": "Power",
+        "tags": ["strength", "sweat", "challenge"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      },
+      {
+        "id": "vin-3",
+        "title": "Sunset Flow",
+        "description": "A moderate, joyful vinyasa to transition from work mode into evening ease.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "vimeo",
+        "durationMinutes": 25,
+        "level": "Intermediate",
+        "style": "Vinyasa",
+        "tags": ["joyful", "transition", "evening"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      }
+    ]
+  },
+  {
+    "category": "Yin & Restorative",
+    "videos": [
+      {
+        "id": "yin-1",
+        "title": "Deep Yin: Hips & Low Back",
+        "description": "Long-held, supported postures to release deep tension. Props recommended.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 40,
+        "level": "All Levels",
+        "style": "Yin",
+        "tags": ["tired", "release", "props"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      },
+      {
+        "id": "yin-2",
+        "title": "Restorative Wind-Down",
+        "description": "A slow, cozy practice designed to prep the body and mind for sleep.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 35,
+        "level": "Beginner",
+        "style": "Restorative",
+        "tags": ["sleep", "calm", "evening"],
+        "format": "horizontal",
+        "free": true,
+        "featured": false
+      }
+    ]
+  },
+  {
+    "category": "Hatha & Foundations",
+    "videos": [
+      {
+        "id": "hatha-1",
+        "title": "Foundations: Alignment Basics",
+        "description": "Slow, clear instruction on the foundational postures every practice builds on.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 30,
+        "level": "Beginner",
+        "style": "Hatha",
+        "tags": ["beginner", "alignment", "foundations"],
+        "format": "horizontal",
+        "free": true,
+        "featured": false
+      },
+      {
+        "id": "hatha-2",
+        "title": "Steady & Strong",
+        "description": "Held postures paired with steady breath to build strength and focus.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 35,
+        "level": "Intermediate",
+        "style": "Hatha",
+        "tags": ["strength", "focus"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      }
+    ]
+  },
+  {
+    "category": "Prenatal & Gentle",
+    "videos": [
+      {
+        "id": "pre-1",
+        "title": "Prenatal Flow: Second & Third Trimester",
+        "description": "Safe, supportive movement for a growing body, focused on hip mobility and breath.",
+        "videoId": "aqz-KE-bpKQ",
+        "platform": "youtube",
+        "durationMinutes": 25,
+        "level": "All Levels",
+        "style": "Prenatal",
+        "tags": ["pregnancy", "gentle", "supportive"],
+        "format": "horizontal",
+        "free": false,
+        "featured": false
+      }
+    ]
+  }
+]
