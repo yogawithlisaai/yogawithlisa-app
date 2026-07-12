@@ -3,6 +3,11 @@
 A full-stack yoga wellness web app: on-demand classes, recipes, an AI practice tracker
 ("MindShift"), a daily wellness check-in dashboard, booking with Lisa, and SMS practice reminders.
 
+> **⭐ Next.js + Supabase version (Vercel-ready):** the app has been rebuilt on
+> **Next.js 14 + Supabase + Tailwind CSS** in [`nextjs/`](./nextjs/README.md) — a 1:1 functional
+> port that deploys to Vercel (set the project's Root Directory to `nextjs`). The original
+> Bun + Vite + Hono app below is kept intact for reference.
+
 > **A note on the stack.** This project was requested as Next.js + Vercel + Supabase, but it's
 > built on Runable's managed full-stack template instead: **Bun + Vite + React (frontend) + Hono
 > (API) + Drizzle ORM + SQLite (via Turso/libSQL)**. Functionally it's a 1:1 match —
