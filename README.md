@@ -24,18 +24,26 @@ A full-stack yoga wellness web app: on-demand classes, recipes, an AI practice t
 - **SMS:** Twilio REST API (directly, no SDK dependency)
 - **Booking:** Calendly embed (`react-calendly`)
 
+**Repo:** https://github.com/yogawithlisaai/yogawithlisa-app
+
 ## Project layout
 
 ```
 packages/web/
   src/api/                  Hono API
     auth.ts                 Better Auth config
-    database/schema.ts      Drizzle schema (practice logs, check-ins, reminder opt-ins, + auth tables)
-    routes/                 practice-logs, checkins, reminders, cron
-    agent/                  MindShift AI agent + tools (logPractice, getRecentActivity, suggestClasses)
+    database/schema.ts      Drizzle schema — re-exports auth tables + MindShift's table, defines
+                             check-ins & reminder opt-ins directly
+    mindshift/              MindShift feature module — fully standalone, see its own README.md.
+                             Nothing outside this folder imports from inside it except the one
+                             `.route("/mindshift", ...)` line in api/index.ts.
+    routes/                 checkins, reminders, cron (everything except MindShift)
     lib/twilio.ts            Twilio SMS sender (stubbed until credentials are set)
   src/web/                  React frontend
+    features/mindshift/     MindShift feature module (frontend half) — see its own README.md.
+                             `<MindShiftDashboard />` has no dependency on this app's page chrome.
     pages/                  home, classes, recipes, wellness, mindshift, book, reminders, sign-in/up
+                             (pages/mindshift.tsx is a ~20-line wrapper around the feature module)
     data/classes.json        Class library content — edit this to add/change classes
     data/recipes.json        Recipe library content — edit this to add/change recipes
     public/recipes/*.png     Recipe photos (community-submitted placeholders)
@@ -71,19 +79,29 @@ Copy `.env.example` to `.env` and fill in the values (never commit `.env`).
 | `TWILIO_ACCOUNT_SID` / `TWILIO_AUTH_TOKEN` / `TWILIO_FROM_NUMBER` | SMS reminders — see below |
 | `CRON_SECRET` | Shared secret to protect the daily reminder cron endpoint |
 
-## MindShift (AI practice tracker)
+## MindShift (AI practice tracker) — built as a standalone-ready module
 
-`MindShift` is a chat agent (`POST /api/agent/messages`) with three tools:
+MindShift is deliberately isolated from the rest of the app so it can be lifted into another
+project on its own:
 
-- **`logPractice`** — called automatically when the user mentions practicing; saves a row to
-  `practice_logs`.
-- **`getRecentActivity`** — pulls the user's recent logs, check-ins, and computed streak so the
-  agent has context.
-- **`suggestClasses`** — looks up matching classes from `classes.json` by style/level/duration/mood.
+- **Backend:** `packages/web/src/api/mindshift/` — owns its one DB table (`practice_logs`), the
+  streak calculation, the 3 agent tools (`logPractice`, `getRecentActivity`, `suggestClasses`), the
+  Claude agent, and a Hono route factory `createMindShiftRoutes({ authMiddleware, requireAuth, deps })`.
+  Mounted in `api/index.ts` via a single `.route("/mindshift", createMindShiftRoutes(...))` call.
+  Exposes `GET/POST /api/mindshift/logs`, `DELETE /api/mindshift/logs/:id`, `POST /api/mindshift/chat`.
+- **Frontend:** `packages/web/src/web/features/mindshift/` — `<MindShiftDashboard />` is the entire
+  stat cards + practice history + chat UI, with zero dependency on this app's nav/footer/auth-guard.
+  `pages/mindshift.tsx` is just a thin wrapper adding this app's page chrome around it.
+- **The only coupling to the rest of the app:** a `classCatalog` array (for class recommendations)
+  passed in at mount time, and an optional `getRecentWellnessSignals` hook for pulling in check-in
+  data from the Wellness Dashboard feature. Both are injected via a `deps` object — omit either one
+  and MindShift still works, just without that extra context.
 
-Streaks (`currentStreak`, `longestStreak`, `totalDays`) are computed server-side in
-`routes/practice-logs.ts` (`computeStreaks`) from the set of distinct practice dates, and shown on
-the MindShift dashboard alongside a scrollable practice history.
+**Full extraction instructions live in each module's own README**:
+`packages/web/src/api/mindshift/README.md` and `packages/web/src/web/features/mindshift/README.md`.
+
+Streaks (`currentStreak`, `longestStreak`, `totalDays`) are computed by the pure `computeStreaks()`
+function in `mindshift/streaks.ts` from the set of distinct practice dates.
 
 ## Wellness Dashboard
 
