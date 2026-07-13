@@ -6,12 +6,50 @@ import { PageShell } from "@/components/page-shell";
 
 const CALENDLY_URL = "https://calendly.com/contact-yogawithlisa/30min";
 
-const categories = [
-  { id: "group", label: "In-Person Group Classes", desc: "Join a local group class in a shared, supportive space." },
-  { id: "private", label: "One-on-One Private Sessions", desc: "Fully personalized practice tailored to your body and goals." },
-  { id: "corporate", label: "Corporate Wellness", desc: "On-site or virtual sessions for teams, off-sites, and wellness days." },
-  { id: "retreat", label: "Retreat Sessions", desc: "Immersive multi-day retreat programming and workshops." },
-  { id: "discovery", label: "Discovery Call", desc: "Not sure what you need? Start with a free 30-minute call." },
+type Category = {
+  id: string;
+  label: string;
+  desc: string;
+  embedType: "calendly" | "iframe";
+  embedUrl: string;
+};
+
+const categories: Category[] = [
+  {
+    id: "group",
+    label: "Live Group Classes",
+    desc: "Join a local group class in a shared, supportive space.",
+    embedType: "iframe",
+    embedUrl: "https://schedule.yogawithlisa.ai",
+  },
+  {
+    id: "private",
+    label: "One-on-One Private Sessions",
+    desc: "Fully personalized practice tailored to your body and goals.",
+    embedType: "calendly",
+    embedUrl: CALENDLY_URL,
+  },
+  {
+    id: "corporate",
+    label: "Corporate Wellness",
+    desc: "On-site or virtual sessions for teams, off-sites, and wellness days.",
+    embedType: "iframe",
+    embedUrl: "https://corporate.yogawithlisa.ai",
+  },
+  {
+    id: "retreat",
+    label: "Retreat Sessions",
+    desc: "Immersive multi-day retreat programming and workshops.",
+    embedType: "iframe",
+    embedUrl: "https://bali.yogawithlisa.ai",
+  },
+  {
+    id: "discovery",
+    label: "Discovery Call",
+    desc: "Not sure what you need? Start with a free 30-minute call.",
+    embedType: "calendly",
+    embedUrl: CALENDLY_URL,
+  },
 ];
 
 export default function Book() {
@@ -54,11 +92,22 @@ export default function Book() {
           <div className="rounded-[20px] border border-[var(--color-line)] p-4 sm:p-6">
             <h2 className="mb-1 font-serif text-xl text-[var(--color-ink)]">{activeCategory.label}</h2>
             <p className="mb-4 text-sm text-[var(--color-ink-soft)]">
-              Pick a time below — this uses Lisa&apos;s Calendly. (Currently pointing to the same general
-              booking link; swap in a dedicated Calendly event type per category any time.)
+              {activeCategory.embedType === "calendly"
+                ? "Pick a time below, this uses Lisa's Calendly."
+                : "Pick a time below."}
             </p>
             <div className="overflow-hidden rounded-[20px]">
-              <InlineWidget url={CALENDLY_URL} styles={{ height: "700px", width: "100%" }} />
+              {activeCategory.embedType === "calendly" ? (
+                <InlineWidget url={activeCategory.embedUrl} styles={{ height: "700px", width: "100%" }} />
+              ) : (
+                <iframe
+                  key={activeCategory.id}
+                  src={activeCategory.embedUrl}
+                  title={activeCategory.label}
+                  style={{ height: "700px", width: "100%", border: 0 }}
+                  loading="lazy"
+                />
+              )}
             </div>
           </div>
         </div>
