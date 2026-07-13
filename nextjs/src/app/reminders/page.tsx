@@ -98,15 +98,11 @@ export default function Reminders() {
             />
           </div>
 
-          <div className="mt-7">
-            <p className="mb-2 text-sm font-medium text-[var(--color-ink)]">Preferred reminder time</p>
-            <input
-              type="time"
-              value={preferredTime}
-              onChange={(e) => setPreferredTime(e.target.value)}
-              className="w-full rounded-xl border border-[var(--color-line)] bg-transparent px-4 py-2.5 text-sm text-[var(--color-ink)]"
-            />
-          </div>
+          {/* Time picker hidden while reminders run on a single daily cron (Vercel Hobby plan).
+              preferredTime is still stored/sent so per-user times can return with an hourly scheduler. */}
+          <p className="mt-7 rounded-2xl bg-[var(--color-cream)] px-4 py-3 text-sm text-[var(--color-ink-soft)]">
+            Reminders go out once daily, around 11am PT / 2pm ET.
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <button

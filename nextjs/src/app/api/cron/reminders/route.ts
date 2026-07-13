@@ -4,8 +4,9 @@ import { sendReminderSms } from "@/lib/twilio";
 export const dynamic = "force-dynamic";
 
 /**
- * Daily SMS reminder cron. Scheduled hourly by Vercel Cron (see vercel.json);
- * only messages users whose preferred hour matches the current UTC hour.
+ * Daily SMS reminder cron. Scheduled once daily by Vercel Cron (see vercel.json —
+ * Hobby plan supports one run per day), so it messages every opted-in user
+ * regardless of their preferred time.
  *
  * Vercel Cron calls GET with `Authorization: Bearer ${CRON_SECRET}`. The POST
  * variant with an `x-cron-secret` header is kept for external schedulers
@@ -19,12 +20,9 @@ async function runReminders() {
     .eq("opted_in", true);
   if (error) return Response.json({ message: error.message }, { status: 500 });
 
-  const currentHour = new Date().getUTCHours();
   const results = [];
   for (const row of optins ?? []) {
     if (!row.phone) continue;
-    const preferredHour = Number(row.preferred_time?.split(":")[0] ?? 18);
-    if (preferredHour !== currentHour) continue;
     const result = await sendReminderSms(row.phone);
     results.push({ userId: row.user_id, ...result });
     await supabase
