@@ -539,6 +539,34 @@
     ]
   },
   {
+    "id": "steamed-chayote-carrot-peanut-sauce",
+    "title": "Steamed Chayote & Carrot with Peanut Sauce",
+    "photo": "/recipes/steamed-chayote-carrot-peanut-sauce.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "Steamed vegetables with a traditional pounded peanut-tamarind sauce.",
+    "ingredients": [
+      "1 medium chayote – peeled and sliced into sticks",
+      "1 medium carrot – peeled and sliced into sticks",
+      "1/2 cup green beans (optional)",
+      "A pinch of salt",
+      "Sauce: 1/2 cup roasted peanuts (or 3 tbsp natural peanut butter)",
+      "2 garlic cloves",
+      "2 red chilies (to taste)",
+      "1 tbsp palm sugar (or brown sugar)",
+      "1/2 tsp salt",
+      "1 tbsp tamarind water (or 1 tsp lime juice)",
+      "1/4 cup warm water (adjust for consistency)"
+    ],
+    "steps": [
+      "Steam chayote and carrots (and green beans if using) for 5-7 minutes until tender but still bright. Set aside.",
+      "Grind roasted peanuts, garlic, and chilies in a mortar & pestle or food processor. Add palm sugar, salt, and tamarind water. Slowly add warm water until smooth and slightly thick. (If using peanut butter, simply mix all ingredients until creamy.)",
+      "Arrange steamed vegetables on a plate, spoon peanut sauce generously on top. Serve warm or at room temperature."
+    ]
+  },
+  {
     "id": "moringa-soup",
     "title": "Moringa Soup",
     "photo": "/recipes/moringa-soup.png",
@@ -560,6 +588,604 @@
       "Boil water with shallot and corn until corn is tender. Season with salt and mushroom powder.",
       "Reduce heat, add moringa and sweet basil leaves.",
       "Simmer briefly and serve hot."
+    ]
+  },
+  {
+    "id": "beetroot-soup",
+    "title": "Beetroot Soup",
+    "photo": "/recipes/beetroot-soup.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A smooth, vibrant puréed beetroot soup brightened with lemon.",
+    "ingredients": [
+      "3 medium beetroots – peeled and diced",
+      "1 small onion – chopped",
+      "2 garlic cloves – chopped (optional)",
+      "3 cups vegetable broth or water",
+      "1 tbsp olive oil",
+      "Salt – to taste",
+      "Black pepper – to taste",
+      "1 tbsp lemon juice or vinegar (optional)",
+      "Optional garnish: fresh parsley, a swirl of coconut cream"
+    ],
+    "steps": [
+      "Heat olive oil in a pot over medium heat. Add onion (and garlic, if using) and sauté until soft.",
+      "Stir in diced beetroot and cook 2-3 minutes.",
+      "Pour in broth or water. Bring to a boil, reduce heat, and simmer 20-25 minutes until beetroot is tender.",
+      "Blend until smooth using an immersion or regular blender (careful with hot soup).",
+      "Season with salt, pepper, and lemon juice/vinegar to taste.",
+      "Serve hot, garnished with parsley or a swirl of coconut cream."
+    ]
+  },
+  {
+    "id": "red-bean-vegetable-stew",
+    "title": "Red Bean Vegetable Stew",
+    "photo": "/recipes/red-bean-vegetable-stew.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A hearty stew of red beans, sweet potato, and carrot in a tomato base.",
+    "ingredients": [
+      "1 kg red beans",
+      "3 tbsp tomato paste",
+      "1 tbsp paprika powder",
+      "200 g diced onion",
+      "200 g diced carrot",
+      "200 g diced sweet potato",
+      "2 tbsp salt and pepper (to taste)"
+    ],
+    "steps": [
+      "Soak red beans in water overnight or at least 8 hours. Drain and rinse.",
+      "Dice onion, carrot, and sweet potato.",
+      "Cook the beans: cover with water, bring to a boil, then simmer 1-1.5 hours until tender. Drain and set aside.",
+      "In the same pot, heat a little oil and sauté onion, carrot, and sweet potato about 10 minutes until softening.",
+      "Stir in tomato paste and paprika, cook 2 minutes.",
+      "Add cooked beans back in with enough water to cover (about 4 cups). Season with salt and pepper. Bring to a boil, then simmer about 30 minutes until vegetables are tender and flavors meld."
+    ]
+  },
+  {
+    "id": "kitchari",
+    "title": "Kitchari",
+    "photo": "/recipes/kitchari.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A classic Ayurvedic one-pot rice and lentil dish, gently spiced with cumin and turmeric.",
+    "ingredients": [
+      "1/2 cup rice",
+      "1/2 cup split yellow lentils (moong dal)",
+      "4 cups water",
+      "1 tablespoon coconut oil",
+      "1 teaspoon cumin seeds",
+      "1/2 teaspoon turmeric powder",
+      "1 teaspoon salt (adjust to taste)",
+      "1 cup chopped veggies (optional)",
+      "Cilantro leaves for garnish",
+      "Optional spices for masala khichdi: 1/2 tsp red chili powder, 1/2 tsp coriander powder, 1/2 tsp garam masala powder, 1 tsp grated ginger"
+    ],
+    "steps": [
+      "Heat a deep pot over medium heat. Add coconut oil and cumin seeds; let them splutter.",
+      "Add chopped onions and veggies (if using). Sauté a couple minutes until softened. Add turmeric, salt, and optional spices if making masala khichdi.",
+      "Rinse rice and lentils thoroughly, add to the pot with 4 cups water and stir well.",
+      "Cook over medium heat until lentils and rice reach desired consistency, adjusting water as needed.",
+      "Turn off heat, garnish with cilantro. Serve hot."
+    ]
+  },
+  {
+    "id": "black-bean-stew-sweet-potato",
+    "title": "Black Bean Stew with Sweet Potato",
+    "photo": "/recipes/black-bean-stew-sweet-potato.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A warming black bean and sweet potato stew, spiced with cumin and coriander.",
+    "ingredients": [
+      "2 cups cooked black beans (or 1 can, drained & rinsed)",
+      "1 medium sweet potato – peeled and diced",
+      "1 red bell pepper – diced",
+      "1 medium onion – chopped",
+      "3 garlic cloves – minced",
+      "1-2 medium tomatoes – chopped (or 1 cup crushed tomatoes)",
+      "2 tbsp olive oil",
+      "1 tsp sweet paprika powder",
+      "1/2 tsp ground cumin",
+      "1/2 tsp ground coriander",
+      "Salt & black pepper – to taste",
+      "2 1/2-3 cups vegetable broth or water",
+      "Optional garnish: fresh cilantro or parsley, lime wedges"
+    ],
+    "steps": [
+      "Heat olive oil in a large pot. Add onion and cook until soft. Add garlic and cook 1 minute.",
+      "Stir in sweet paprika, cumin, and coriander; cook 30 seconds.",
+      "Mix in sweet potato, bell pepper, and tomato.",
+      "Add black beans and vegetable broth. Bring to a boil.",
+      "Reduce heat and simmer uncovered 20-25 minutes, stirring occasionally, until sweet potato is tender and stew thickens.",
+      "Season with salt and pepper. Serve hot, garnished with cilantro/parsley or lime."
+    ]
+  },
+  {
+    "id": "cannellini-vegetable-stew",
+    "title": "Cannellini and Vegetable Stew",
+    "photo": "/recipes/cannellini-vegetable-stew.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A comforting Italian-style white bean stew with carrot, celery, and zucchini.",
+    "ingredients": [
+      "2 cups cooked cannellini beans (or 1 can, drained & rinsed)",
+      "1 medium onion – chopped",
+      "2 garlic cloves – minced",
+      "1 carrot – diced",
+      "1 celery stalk – diced",
+      "1 small zucchini – diced (optional)",
+      "1 red bell pepper – diced",
+      "2 medium tomatoes – chopped (or 1 cup crushed tomatoes)",
+      "2 1/2 cups vegetable broth or water",
+      "2 tbsp olive oil",
+      "1 tsp sweet paprika (optional)",
+      "1/2 tsp dried thyme or oregano",
+      "Salt – to taste",
+      "Black pepper – to taste",
+      "Fresh parsley or basil for garnish"
+    ],
+    "steps": [
+      "Heat olive oil in a large pot. Add onion, cook until translucent. Add garlic, cook 1 minute.",
+      "Stir in carrot, celery, zucchini, and bell pepper. Cook 4-5 minutes until slightly softened.",
+      "Add chopped tomatoes, paprika, thyme/oregano, salt, and pepper. Cook 2-3 minutes until tomatoes break down.",
+      "Stir in cannellini beans and vegetable broth. Bring to a boil.",
+      "Lower heat and simmer 15-20 minutes until vegetables are tender and stew thickens slightly.",
+      "Adjust seasoning and serve hot, garnished with parsley or basil."
+    ]
+  },
+  {
+    "id": "snow-fungus-soup",
+    "title": "Snow Fungus \"Yin Er\" Soup",
+    "photo": "/recipes/snow-fungus-soup.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A delicate Chinese-style soup with snow fungus, carrot, and leek in a light broth.",
+    "ingredients": [
+      "20 g dried snow fungus (Yin Er) – soaked, trimmed, and cut into pieces",
+      "1 medium carrot – diced",
+      "2 cloves garlic – minced",
+      "1/2 cup leek – sliced thin",
+      "4 cups vegetable broth or water",
+      "1 tbsp olive oil or neutral oil",
+      "1/2 tsp salt (or to taste)",
+      "1/4 tsp black pepper",
+      "1 tbsp cornstarch (maizena) + 2 tbsp water (to thicken)"
+    ],
+    "steps": [
+      "Soak dried snow fungus 20-30 minutes until fully expanded. Rinse, remove the tough base, and cut into bite-size pieces.",
+      "Heat oil in a pot over medium heat. Add garlic and leek, sauté 1-2 minutes until fragrant.",
+      "Stir in diced carrot and snow fungus, cook another 2 minutes.",
+      "Pour in broth or water. Bring to a boil, then simmer 10-15 minutes until carrots are tender.",
+      "Season with salt and black pepper.",
+      "Stir the cornstarch slurry, then slowly pour into the soup while stirring until slightly thickened. Simmer 1-2 minutes.",
+      "Serve hot, garnished with extra leek or parsley if desired."
+    ]
+  },
+  {
+    "id": "vegan-tikka-masala",
+    "title": "Vegan Tikka Masala",
+    "photo": "/recipes/vegan-tikka-masala.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "Crispy pan-seared tofu in a creamy, spiced tomato-coconut curry sauce.",
+    "ingredients": [
+      "2 (14-ounce) blocks firm or extra firm tofu, pressed and cubed",
+      "1 large yellow onion, divided",
+      "2 cloves garlic",
+      "1-inch piece of ginger, peeled",
+      "10 sprigs fresh cilantro (plus more for serving)",
+      "2 tablespoons olive oil, divided",
+      "1/2 teaspoon cumin",
+      "1/2 teaspoon turmeric",
+      "1/4 teaspoon ground cinnamon",
+      "1 teaspoon paprika",
+      "1 teaspoon salt",
+      "1 1/2 teaspoons garam masala",
+      "1 (15-ounce) can tomato sauce",
+      "1 small container vegan yogurt",
+      "7.5 oz can full-fat coconut cream or milk",
+      "1 cup frozen peas",
+      "Optional for serving: chopped cilantro, extra yogurt, basmati rice"
+    ],
+    "steps": [
+      "Prepare sauce base: in a food processor, combine half the onion, garlic, ginger, cilantro stalks, and 1 tbsp olive oil. Blitz into a smooth paste; set aside.",
+      "Prepare tofu: heat remaining oil in a large skillet, add cubed tofu, sauté until lightly browned and crispy on all sides, about 15 minutes. Set tofu aside.",
+      "Prepare sauce: in the same skillet, heat oil, add finely chopped onion, cook about 8 minutes until softened and lightly browned.",
+      "Add cumin, turmeric, cinnamon, paprika, salt, and garam masala; cook 1 minute until fragrant.",
+      "Pour in tomato sauce, vegan yogurt, and coconut cream. Add the blitzed onion-cilantro paste. Stir well and simmer about 5 minutes.",
+      "Add the sautéed tofu and frozen peas. Stir gently and cook an additional 5 minutes until peas are heated through.",
+      "Serve over basmati rice, garnished with cilantro and a dollop of vegan yogurt."
+    ]
+  },
+  {
+    "id": "spinach-curry-chickpeas",
+    "title": "Spinach Curry with Chickpeas",
+    "photo": "/recipes/spinach-curry-chickpeas.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A creamy coconut-milk spinach and chickpea curry, warmly spiced.",
+    "ingredients": [
+      "2 tbsp coconut oil (or vegetable oil)",
+      "1 medium onion – finely chopped",
+      "3 garlic cloves – minced",
+      "1-inch piece ginger – grated",
+      "1 green chili – finely chopped (optional)",
+      "2 medium tomatoes – diced",
+      "1 tsp cumin seeds",
+      "1 tsp ground coriander",
+      "1 tsp turmeric powder",
+      "1 tsp garam masala",
+      "1/2 tsp chili powder (adjust to taste)",
+      "1 can (400 g) chickpeas – drained & rinsed",
+      "3 cups fresh spinach leaves – roughly chopped",
+      "1/2 cup coconut milk (or water for lighter version)",
+      "Salt to taste"
+    ],
+    "steps": [
+      "Heat coconut oil in a pan. Add cumin seeds; let sizzle a few seconds. Add onion and sauté until soft and golden.",
+      "Stir in garlic, ginger, and chili. Cook until fragrant, about 1 minute.",
+      "Mix in turmeric, coriander, chili powder, and garam masala. Add diced tomatoes and cook until soft and pulpy.",
+      "Stir in chickpeas and a splash of water. Simmer 5-7 minutes so they absorb flavor.",
+      "Add spinach, cook until wilted. Pour in coconut milk, stir well, and simmer 3-5 minutes until creamy.",
+      "Season with salt. Garnish with fresh coriander and a drizzle of coconut milk or plant-based yogurt if desired."
+    ]
+  },
+  {
+    "id": "creamy-black-bean",
+    "title": "Creamy Black Bean",
+    "photo": "/recipes/creamy-black-bean.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A quick, coconut-milk-enriched black bean side dish or dip.",
+    "ingredients": [
+      "2 cups cooked black beans (or 1 can, drained & rinsed)",
+      "3 garlic cloves – minced",
+      "1 tbsp olive oil or coconut oil",
+      "1/2 tsp dried thyme (or 1 tsp fresh thyme leaves)",
+      "200 ml (about 3/4 cup) coconut milk",
+      "1/2-1 cup vegetable broth or water (adjust for thickness)",
+      "Salt – to taste",
+      "Black pepper – optional"
+    ],
+    "steps": [
+      "Heat oil in a pot over medium heat. Add garlic and cook 1-2 minutes until fragrant but not browned.",
+      "Stir in black beans and thyme; cook another minute.",
+      "Pour in coconut milk and a bit of vegetable broth/water. Stir well.",
+      "Season with salt (and black pepper if using) to taste.",
+      "For a creamier texture, mash some beans with the back of a spoon or blend half, then return to the pot.",
+      "Serve hot as a side dish, dip, or over rice."
+    ]
+  },
+  {
+    "id": "red-bean-balls-red-sauce",
+    "title": "Red Bean Balls with Red Sauce",
+    "photo": "/recipes/red-bean-balls-red-sauce.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "Baked spiced red bean balls in a creamy tomato-coconut white sauce.",
+    "ingredients": [
+      "Red Bean Balls: 1 kg red beans, boiled",
+      "1 tsp cumin powder",
+      "1 tsp coriander powder",
+      "1/2 tsp garam masala",
+      "1 tsp curry powder",
+      "3 tbsp salt (to taste)",
+      "1 tsp black pepper powder",
+      "3 pcs garlic, chopped",
+      "100 gr onion, chopped",
+      "2 cups tomatoes, chopped",
+      "White Sauce: 15 oz crushed tomatoes",
+      "1 small onion, chopped",
+      "2 pcs garlic, chopped",
+      "1 tbsp olive oil",
+      "1 tsp dried oregano",
+      "1 tsp dried basil",
+      "Salt and pepper to taste, coconut milk, water, nutritional yeast"
+    ],
+    "steps": [
+      "Red Bean Balls: pulse boiled red beans in a food processor into small chunks without pureeing. Transfer to a mixing bowl.",
+      "Finely chop onion, garlic in the food processor; combine with the red beans.",
+      "Mix in cumin, coriander, garam masala, curry powder, salt, and black pepper. Chill the mixture at least an hour.",
+      "Preheat oven to 350°F (175°C). Shape mixture into balls and place on a baking sheet. Bake 20 minutes, flip, bake another 20 minutes until golden brown.",
+      "White Sauce: sauté chopped garlic until golden. Add crushed tomatoes, oregano, basil, coconut milk, and water. Bring to a boil, then simmer until creamy. Stir in salt and nutritional yeast to taste."
+    ]
+  },
+  {
+    "id": "jackfruit-bbq-tamarind-coconut-aminos",
+    "title": "Jackfruit BBQ with Tamarind & Coconut Aminos",
+    "photo": "/recipes/jackfruit-bbq-tamarind-coconut-aminos.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "Shredded young jackfruit simmered in a tangy tamarind-coconut aminos BBQ sauce.",
+    "ingredients": [
+      "2 cans (400 g each) young green jackfruit in brine – drained, rinsed, and shredded",
+      "2 tbsp coconut oil (or neutral oil)",
+      "1 medium onion – finely chopped",
+      "3 cloves garlic – minced",
+      "1 tsp smoked paprika (or regular paprika)",
+      "3 tbsp coconut aminos",
+      "2 tbsp tamarind paste (adjust to taste)",
+      "3 tbsp tomato paste",
+      "2 tbsp coconut sugar (or brown sugar)",
+      "150 ml water (about 2/3 cup)",
+      "Salt and black pepper to taste",
+      "Fresh coriander or parsley for garnish (optional)"
+    ],
+    "steps": [
+      "Drain and rinse jackfruit well. Pat dry and shred into pieces with fingers or forks, removing seeds if desired.",
+      "Heat coconut oil in a large skillet over medium heat, add onion, sauté until translucent, about 4-5 minutes. Stir in garlic, paprika, cooking 30 seconds until fragrant.",
+      "Stir in tomato paste, coconut aminos, tamarind paste, and coconut sugar. Add water and whisk into a smooth sauce; simmer 2 minutes.",
+      "Add shredded jackfruit, stirring to coat. Lower heat, cover, and cook gently 15-20 minutes, stirring occasionally, until tender and sauce thickens.",
+      "Adjust seasoning with salt, pepper, tamarind, or coconut sugar. Serve warm in tacos, on buns, or with steamed rice."
+    ]
+  },
+  {
+    "id": "creamy-tempeh",
+    "title": "Creamy Tempeh",
+    "photo": "/recipes/creamy-tempeh.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "Golden pan-seared tempeh simmered in a coconut milk and thyme sauce.",
+    "ingredients": [
+      "250 g tempeh – cut into bite-size cubes or slices",
+      "3 garlic cloves – minced",
+      "1 tbsp olive oil or coconut oil",
+      "1/2 tsp dried thyme (or 1 tsp fresh thyme leaves)",
+      "200 ml (about 3/4 cup) coconut milk",
+      "1/2 cup vegetable broth or water (adjust for thickness)",
+      "Salt – to taste",
+      "Black pepper – optional",
+      "Squeeze of lime or lemon (optional)"
+    ],
+    "steps": [
+      "Steam tempeh 10 minutes (optional, reduces bitterness), then pat dry.",
+      "Heat oil in a pan over medium heat. Add tempeh, cook until lightly golden on all sides, about 4-5 minutes. Remove and set aside.",
+      "In the same pan, add garlic and sauté 1 minute until fragrant.",
+      "Pour in coconut milk and vegetable broth. Stir in thyme, salt, and black pepper. Simmer gently 2-3 minutes.",
+      "Return tempeh to the pan. Simmer another 5 minutes, letting the sauce thicken and coat the tempeh.",
+      "Adjust salt, add a squeeze of lime or lemon if desired. Serve hot with rice, quinoa, or bread."
+    ]
+  },
+  {
+    "id": "fajita-vegetables",
+    "title": "Fajita Vegetables",
+    "photo": "/recipes/fajita-vegetables.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A spiced sauté of cauliflower, broccoli, and mushroom, fajita-style.",
+    "ingredients": [
+      "1 cup cauliflower florets",
+      "1 cup broccoli florets",
+      "1 cup button mushrooms – sliced",
+      "1 medium onion – sliced",
+      "3 garlic cloves – minced",
+      "2 tbsp olive oil",
+      "1/2 tsp ground cumin",
+      "1/2 tsp ground coriander",
+      "1 tsp paprika powder (sweet or smoked)",
+      "A pinch of nutmeg",
+      "Salt – to taste",
+      "Black pepper – to taste",
+      "Optional garnish: lime wedges, fresh cilantro"
+    ],
+    "steps": [
+      "Cut cauliflower and broccoli into small florets. Slice mushrooms and onion.",
+      "Combine cumin, coriander, paprika, nutmeg, salt, and black pepper in a small bowl.",
+      "Heat olive oil in a large skillet over medium-high heat. Add onion and garlic, sauté 2 minutes until fragrant.",
+      "Add cauliflower and broccoli first, cook 4-5 minutes, stirring often. Then add mushrooms.",
+      "Sprinkle the spice mix over the veggies and toss well. Cook another 3-4 minutes until tender but still a bit crisp.",
+      "Adjust seasoning. Serve hot with rice or as a side dish; squeeze lime on top if desired."
+    ]
+  },
+  {
+    "id": "grilled-asparagus-mushrooms",
+    "title": "Grilled Asparagus & Mushrooms with Garlic and Fresh Herbs",
+    "photo": "/recipes/grilled-asparagus-mushrooms.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "Simple grilled asparagus and mushrooms tossed with garlic and fresh herbs.",
+    "ingredients": [
+      "200 g asparagus – trimmed",
+      "150 g button mushrooms – halved or thickly sliced",
+      "3 garlic cloves – minced (or 1 tsp garlic powder)",
+      "2 tbsp olive oil",
+      "2 tbsp fresh herbs – chopped (parsley, thyme, rosemary, or a mix)",
+      "Salt – to taste",
+      "Black pepper – to taste",
+      "Optional: a squeeze of lemon juice for serving"
+    ],
+    "steps": [
+      "Trim woody ends from asparagus. Clean mushrooms and cut into halves or thick slices.",
+      "Mix olive oil, minced garlic, salt, black pepper, and chopped herbs in a bowl. Toss asparagus and mushrooms in this mixture.",
+      "Grill on a grill pan or outdoor grill preheated to medium-high, 3-4 minutes per side for asparagus and 4-5 minutes per side for mushrooms, until tender with light char. (Or broil in the oven 5-8 minutes, flipping once.)",
+      "Serve hot, drizzled with extra olive oil or a squeeze of lemon juice if desired."
+    ]
+  },
+  {
+    "id": "sauteed-broccoli-mushroom",
+    "title": "Sautéed Broccoli & Mushroom",
+    "photo": "/recipes/sauteed-broccoli-mushroom.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A quick garlicky broccoli and mushroom stir-fry with a touch of sesame.",
+    "ingredients": [
+      "1 small head broccoli – cut into florets",
+      "200 g mushrooms – sliced (button or shiitake)",
+      "2 tbsp olive oil (or coconut oil)",
+      "2 garlic cloves – minced",
+      "1 small onion – finely sliced (optional)",
+      "2 tbsp tamari (gluten-free soy sauce)",
+      "1 tsp sesame oil (optional)",
+      "Salt & black pepper to taste",
+      "Squeeze of lemon juice or dash of vinegar (optional)"
+    ],
+    "steps": [
+      "Blanch broccoli florets in boiling water 1 minute, then drain and rinse with cold water to keep them crisp and green.",
+      "Heat olive oil in a large pan or wok. Add garlic (and onion if using); sauté until fragrant.",
+      "Add sliced mushrooms and cook 3-4 minutes until they release moisture and start to brown.",
+      "Add the broccoli and toss until coated. Pour in tamari, add black pepper, and finish with sesame oil if desired. Stir-fry 2-3 minutes until broccoli is warmed through but still bright and crisp.",
+      "Adjust seasoning and serve."
+    ]
+  },
+  {
+    "id": "sauteed-water-spinach",
+    "title": "Sautéed Water Spinach (Lombok-Style Spicy Spinach Salad)",
+    "photo": "/recipes/sauteed-water-spinach.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "Blanched water spinach topped with a pounded chili-tomato sambal.",
+    "ingredients": [
+      "1 bunch water spinach (kangkung) – washed and cut into 10 cm pieces",
+      "Sambal: 2 medium tomatoes – chopped",
+      "3 shallots – peeled",
+      "3 garlic cloves – peeled",
+      "3 red big chilies (or more to taste)",
+      "Salt to taste",
+      "1/2 tsp mushroom powder (or vegetable seasoning)",
+      "Juice of 1 lime",
+      "1 tbsp coconut oil or vegetable oil"
+    ],
+    "steps": [
+      "Bring a pot of water to a boil with a pinch of salt. Add water spinach and blanch about 30 seconds until wilted but still bright green. Drain and rinse with cold water to keep crisp.",
+      "Heat oil in a small pan and sauté shallots, garlic, chilies, and tomatoes until soft and slightly charred. Transfer to a mortar & pestle (or blender). Add salt and mushroom powder; pound or blend into a coarse paste.",
+      "Stir lime juice into the sambal.",
+      "Arrange the blanched water spinach on a plate, spoon the sambal generously over the top. Serve warm or at room temperature."
+    ]
+  },
+  {
+    "id": "zucchini-mufarakeh",
+    "title": "Zucchini Mufarakeh (Middle Eastern Sautéed Zucchini with Mint)",
+    "photo": "/recipes/zucchini-mufarakeh.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "Golden sautéed zucchini finished with fresh and dried mint.",
+    "ingredients": [
+      "2 medium zucchini, cut into small cubes (1-2 cm)",
+      "1/2 small onion, finely chopped",
+      "2 garlic cloves, minced",
+      "1 tbsp olive oil (plus extra if needed)",
+      "1/2 tsp salt (or to taste)",
+      "1/4 tsp black pepper",
+      "1/2 cup Protena (soy protein) or tofu, optional – cooked or lightly pan-grilled",
+      "1/2 tsp dried mint",
+      "1 tbsp fresh mint leaves, chopped"
+    ],
+    "steps": [
+      "Heat a grill pan or skillet over medium heat. Drizzle with olive oil, then grill or sauté the zucchini cubes until lightly golden and tender, about 5-7 minutes.",
+      "In the same pan, sauté chopped onion until soft and translucent, then add minced garlic and cook about 30 seconds until fragrant.",
+      "Add the cooked zucchini and Protena or tofu. Season with salt and black pepper, stir well, and cook 2-3 minutes to combine flavors.",
+      "Turn off heat. Sprinkle with dried mint and fresh mint leaves, drizzle a little extra olive oil if desired.",
+      "Serve warm or at room temperature."
+    ]
+  },
+  {
+    "id": "vegetable-sambar",
+    "title": "Vegetable Sambar",
+    "photo": "/recipes/vegetable-sambar.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A South Indian lentil and vegetable stew, tempered with mustard seeds and fenugreek.",
+    "ingredients": [
+      "1/2 cup mung beans (yellow mung bean) – rinsed",
+      "1 small carrot, diced",
+      "1/2 cup green beans, cut into 3-4 cm pieces",
+      "1/2 cup pumpkin, diced",
+      "1/2 cup daikon (white radish), sliced",
+      "1 small tomato, chopped",
+      "1 small onion, finely chopped",
+      "1 tbsp grated ginger (or minced)",
+      "1 tbsp coconut oil",
+      "4 cups water (adjust as needed)",
+      "Salt to taste",
+      "1/2 tsp mustard seeds",
+      "1/4 tsp fenugreek seeds",
+      "1/2 tsp coriander powder",
+      "1/2 tsp cumin powder",
+      "1/4 tsp turmeric powder",
+      "1/2 tsp paprika powder (or mild chili powder)"
+    ],
+    "steps": [
+      "Cook mung beans in a pot with 2 1/2 cups water; bring to a boil and simmer until soft, about 20-25 minutes. Lightly mash and set aside.",
+      "Heat coconut oil in a deep pot, add mustard seeds and let them pop. Add fenugreek seeds and sauté briefly. Add onion and ginger, cook until onion turns soft and golden.",
+      "Add chopped tomato with coriander, cumin, turmeric, and paprika. Stir and cook until tomato softens into a paste.",
+      "Add carrot, green beans, pumpkin, and daikon; pour in 1 1/2-2 cups water. Simmer 10-12 minutes until vegetables are tender.",
+      "Add the cooked mung beans, stir well, and simmer another 5-10 minutes to blend flavors. Adjust salt and thickness as needed.",
+      "Finish with a drizzle of coconut oil. Sprinkle with fresh coriander and serve hot with steamed rice."
+    ]
+  },
+  {
+    "id": "tofu-barbeque",
+    "title": "Tofu Barbeque",
+    "photo": "/recipes/tofu-barbeque.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "Pan-fried or baked tofu glazed in a tangy homemade BBQ sauce.",
+    "ingredients": [
+      "250 g firm tofu, pressed and cut into cubes or slices",
+      "1 tbsp oil (for pan or baking)",
+      "Pinch of salt & black pepper",
+      "BBQ Sauce: 3 tbsp tomato sauce (or ketchup)",
+      "1 tbsp vinegar (apple cider or white)",
+      "1 tbsp brown sugar",
+      "1 small garlic clove, minced (optional)",
+      "2-3 tbsp water (adjust for consistency)",
+      "Salt & black pepper to taste"
+    ],
+    "steps": [
+      "Pat tofu dry, season lightly with salt and pepper. Pan-fry in a little oil 3-4 minutes per side, or bake at 180°C (350°F) for 20 minutes, flipping halfway, until golden.",
+      "Make the BBQ sauce: in a small pan, combine tomato sauce, vinegar, brown sugar, garlic, and water. Simmer over low heat 3-5 minutes until slightly thickened. Season with salt and pepper.",
+      "Add the cooked tofu to the pan with BBQ sauce. Stir and coat evenly; simmer 2-3 minutes so it absorbs the flavor.",
+      "Garnish with sesame seeds or spring onion if desired. Serve with steamed rice, roasted veggies, or in wraps/bowls."
     ]
   }
 ]
