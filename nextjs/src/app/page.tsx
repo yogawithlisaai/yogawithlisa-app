@@ -60,7 +60,7 @@ export default function Home() {
       <section className="bg-[var(--color-cream)] px-5 py-24 sm:px-6">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <div className="overflow-hidden rounded-3xl">
-            <img src="/brand/founder.jpg" alt="Lisa" className="aspect-[4/5] w-full object-cover" />
+            <img src="/images/card-mindshift-default.jpg" alt="Lisa meditating on an outdoor deck" className="aspect-[4/5] w-full object-cover" />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-terracotta)]">

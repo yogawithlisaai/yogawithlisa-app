@@ -1,236 +1,565 @@
 [
   {
-    "id": "avocado-mousse",
-    "title": "Chocolate Avocado Mousse",
-    "photo": "/recipes/avocado-mousse.png",
-    "tags": ["vegan", "gluten-free", "dessert", "no-bake"],
-    "description": "A silky, naturally sweetened mousse made from ripe avocado — rich, cool, and topped with fresh strawberry.",
+    "id": "green-rice-porridge",
+    "title": "Green Rice Porridge",
+    "photo": "/recipes/green-rice-porridge.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "breakfast"
+    ],
+    "description": "A warm rice pudding made with pandan and coconut milk, finished with a palm sugar coconut syrup.",
     "ingredients": [
-      "2 ripe avocados",
-      "1/4 cup maple syrup",
-      "1/4 cup cacao powder",
-      "1 tsp vanilla extract",
-      "pinch of sea salt",
-      "2 tbsp almond milk (as needed)",
-      "fresh strawberries, to garnish"
+      "125g rice flour",
+      "850 ml water",
+      "65 ml instant coconut milk",
+      "3 pandan leaves, knotted",
+      "1/2 teaspoon salt",
+      "Coconut syrup: 3 medium-sized pieces of palm sugar",
+      "100 ml water",
+      "1 teaspoon granulated sugar",
+      "A pinch of salt",
+      "2 pandan leaves, knotted"
     ],
     "steps": [
-      "Scoop avocado flesh into a food processor.",
-      "Add maple syrup, cacao powder, vanilla, and sea salt.",
-      "Blend until completely smooth, scraping down sides as needed.",
-      "Add almond milk a tablespoon at a time if too thick.",
-      "Chill for 20 minutes, then serve topped with sliced strawberry."
+      "Rice Pudding: In a pot, add water, coconut milk, salt, pandan leaves, and rice flour. Stir well until dissolved. Cook while continuously stirring until it thickens and bubbles. Turn off heat and set aside.",
+      "Coconut Syrup: In a pot, cook all the coconut syrup ingredients over low heat until it thickens, stirring occasionally to prevent burning.",
+      "To Serve: Spoon the rice pudding into bowls. Drizzle the coconut syrup over the top. Serve warm or chilled."
     ]
   },
   {
-    "id": "dragonfruit-pancakes",
-    "title": "Dragon Fruit Pink Pancakes",
-    "photo": "/recipes/dragonfruit-pancakes.png",
-    "tags": ["vegan", "gluten-free", "breakfast"],
-    "description": "Fluffy naturally-pink pancakes colored with dragon fruit, served with fresh dragon fruit salad and mint.",
-    "ingredients": [
-      "1 cup gluten-free flour blend",
-      "1 tbsp dragon fruit powder (or 1/4 cup fresh dragon fruit, pureed)",
-      "1 tbsp maple syrup",
-      "1 tsp baking powder",
-      "3/4 cup plant milk",
-      "1 tbsp coconut oil, melted",
-      "diced dragon fruit and mint, to serve"
+    "id": "scrambled-tofu",
+    "title": "Scrambled Tofu",
+    "photo": "/recipes/scrambled-tofu.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "breakfast",
+      "high-protein"
     ],
-    "steps": [
-      "Whisk dry ingredients together in a bowl.",
-      "Add plant milk, dragon fruit puree/powder, maple syrup, and melted coconut oil.",
-      "Mix until just combined — do not overmix.",
-      "Cook 1/4-cup portions on a lightly oiled skillet, 2-3 minutes per side.",
-      "Serve topped with diced dragon fruit and fresh mint."
-    ]
-  },
-  {
-    "id": "turmeric-tofu-scramble",
-    "title": "Turmeric Tofu Scramble",
-    "photo": "/recipes/turmeric-tofu-scramble.png",
-    "tags": ["vegan", "gluten-free", "breakfast", "high-protein"],
-    "description": "A golden, savory tofu scramble spiced with turmeric and black salt, finished with fresh tomato and parsley.",
+    "description": "A savory, spiced tofu scramble with kale, bell pepper, and a squeeze of lemon.",
     "ingredients": [
-      "1 block firm tofu, crumbled",
-      "1 tsp ground turmeric",
-      "1/2 tsp black salt (kala namak)",
-      "1/2 tsp garlic powder",
       "1 tbsp olive oil",
-      "1/2 cup cherry tomatoes, sliced",
-      "fresh parsley, to garnish"
-    ],
-    "steps": [
-      "Heat olive oil in a skillet over medium heat.",
-      "Add crumbled tofu, turmeric, black salt, and garlic powder.",
-      "Cook, stirring occasionally, for 6-8 minutes until lightly golden.",
-      "Fold in sliced tomatoes for the last minute of cooking.",
-      "Plate and garnish with fresh parsley."
-    ]
-  },
-  {
-    "id": "golden-tofu-scramble",
-    "title": "Garden Turmeric Scramble Bowl",
-    "photo": "/recipes/golden-tofu-scramble.png",
-    "tags": ["vegan", "gluten-free", "breakfast", "high-protein"],
-    "description": "The same golden turmeric scramble, served family-style with extra herbs — a grounding start to any morning practice.",
-    "ingredients": [
-      "1 block firm tofu, crumbled",
-      "1 tsp ground turmeric",
+      "1 small red onion, chopped",
+      "2 large garlic cloves, chopped",
+      "2 stalks green onion, chopped",
+      "1 small tomato, chopped",
+      "1/2 cup chopped bell pepper (mix of green and red)",
+      "1/4 tsp turmeric powder",
+      "1/4 tsp red chili powder",
+      "1/2 tsp cumin powder",
       "1/2 tsp smoked paprika",
-      "1 tbsp nutritional yeast",
+      "3/4 tsp salt (or to taste)",
+      "8 oz extra-firm tofu, crumbled",
+      "1 tbsp water (optional, if mixture looks too dry)",
+      "1/2 cup chopped kale",
+      "1 lemon for juice",
+      "Cilantro, for garnish",
+      "Nutritional yeast, to sprinkle (optional)"
+    ],
+    "steps": [
+      "Prep tofu: Crumble tofu and set aside.",
+      "Sauté veggies: Heat oil in a pan over medium heat. Sauté red onion, garlic, and green onion for 2 minutes. Add tomato and cook 2 more minutes. Add bell pepper and cook 1 minute.",
+      "Add spices: Stir in turmeric, red chili powder, cumin, smoked paprika, and salt.",
+      "Cook tofu: Add crumbled tofu and mash with a potato masher to combine with veggies and spices. Add water if needed. Stir in kale and cook 1 minute.",
+      "Finish and serve: Turn off heat, cover, let sit 2 minutes. Stir in lemon juice and garnish with cilantro. Sprinkle nutritional yeast if desired."
+    ]
+  },
+  {
+    "id": "granola",
+    "title": "Granola",
+    "photo": "/recipes/granola.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "breakfast",
+      "snack"
+    ],
+    "description": "A big-batch toasted granola with coconut, pumpkin and sunflower seeds, cashews, and dried fruit.",
+    "ingredients": [
+      "1 kg rolled oats",
+      "1 kg coconut flakes",
+      "500 g pumpkin seeds",
+      "500 g sunflower seeds",
+      "250 g cashews",
+      "250 g raisins",
+      "250 g dates (chopped)",
+      "1 tsp salt",
+      "1 1/2 tbsp cinnamon powder",
+      "Simple syrup: 250 g sugar + 60 ml water"
+    ],
+    "steps": [
+      "Preheat oven to 150°C (300°F).",
+      "Prepare simple syrup: combine sugar and water in a small saucepan, heat until sugar dissolves. Set aside.",
+      "Mix dry ingredients: combine oats, coconut flakes, seeds, cashews, salt, and cinnamon in a large bowl.",
+      "Add syrup: pour over the dry mixture and stir until coated.",
+      "Bake: spread on a lined baking sheet. Bake 25-30 minutes, stirring every 10 minutes.",
+      "Add fruits: once golden, stir in raisins and dates while still warm.",
+      "Cool & store in an airtight container."
+    ]
+  },
+  {
+    "id": "vegan-gf-coconut-bread",
+    "title": "Vegan Gluten Free Coconut Bread",
+    "photo": "/recipes/vegan-gf-coconut-bread.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "breakfast"
+    ],
+    "description": "A moist rice-and-tapioca-flour coconut bread, naturally gluten-free.",
+    "ingredients": [
+      "3 cups rice flour",
+      "1 cup tapioca flour",
+      "1 cup sugar",
+      "1 cup desiccated coconut",
+      "1 cup coconut milk",
+      "1/2 teaspoon salt",
+      "1 cup water",
+      "Vanilla essence (optional, to taste)"
+    ],
+    "steps": [
+      "Preheat oven to 160-180°C (320-356°F).",
+      "Combine rice flour, tapioca flour, sugar, and desiccated coconut. Add coconut milk, water, and salt. Add vanilla if using. Mix into a smooth batter.",
+      "Pour into a greased or lined baking pan. Bake 40-50 minutes, until a toothpick comes out clean.",
+      "Cool in the pan 10 minutes, then transfer to a wire rack before slicing.",
+      "Tip: lightly toast the shredded coconut first for extra flavor."
+    ]
+  },
+  {
+    "id": "vegan-gf-banana-bread",
+    "title": "Vegan Gluten Free Banana Bread",
+    "photo": "/recipes/vegan-gf-banana-bread.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "breakfast"
+    ],
+    "description": "A rice-and-tapioca-flour banana bread, soft and naturally gluten-free.",
+    "ingredients": [
+      "1 cup mashed banana",
+      "1 cup rice flour",
+      "1 cup tapioca flour",
+      "1/2 cup coconut palm sugar",
+      "1/2 cup coconut oil, melted",
+      "1/2 cup water or any milk (dairy or non-dairy)",
+      "5 ml (1 tsp) cinnamon powder",
+      "5 ml (1 tsp) baking soda",
+      "10 ml (2 tsp) baking powder"
+    ],
+    "steps": [
+      "Preheat oven to 160-180°C (320-356°F).",
+      "Combine mashed banana, rice flour, tapioca flour, coconut palm sugar, melted coconut oil, and water or milk. Add cinnamon and baking powder. Mix until smooth.",
+      "Pour into a greased or lined loaf pan. Bake 40-50 minutes, until a toothpick comes out clean.",
+      "Cool in the pan 10 minutes, then transfer to a wire rack before slicing."
+    ]
+  },
+  {
+    "id": "jamu",
+    "title": "Jamu",
+    "photo": "/recipes/jamu.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "drink"
+    ],
+    "description": "A traditional Indonesian turmeric-ginger tonic, warm or chilled.",
+    "ingredients": [
+      "4 cups water",
+      "2-3 cm fresh turmeric, thinly sliced (or 1-2 tsp turmeric powder)",
+      "2-3 cm fresh ginger, thinly sliced",
+      "1-2 tbsp maple syrup (adjust to taste, in place of honey)",
+      "Juice of 1 lime or lemon",
+      "Optional additions: lemongrass, bruised galangal, black pepper, crushed cloves, cinnamon"
+    ],
+    "steps": [
+      "Bring water to a boil. Add turmeric, ginger, and any optional herbs/spices. Lower heat and simmer 15-20 minutes to infuse.",
+      "Strain the liquid to remove solids. Stir in maple syrup and lime or lemon juice. Adjust sweetness to taste.",
+      "Serve warm or chilled."
+    ]
+  },
+  {
+    "id": "peanut-butter",
+    "title": "Peanut Butter",
+    "photo": "/recipes/peanut-butter.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "snack",
+      "high-protein"
+    ],
+    "description": "Simple homemade roasted peanut butter, smooth and creamy.",
+    "ingredients": [
+      "2 cups roasted peanuts",
+      "1/2 teaspoon salt (adjust to taste)",
+      "1-2 tablespoons coconut oil (as needed)"
+    ],
+    "steps": [
+      "Place roasted peanuts in a food processor or chopper.",
+      "Blend until they break down into a coarse mixture, then a paste, then a smooth, creamy butter — this may take several minutes.",
+      "While blending, gradually add coconut oil to reach desired consistency. Add salt to taste.",
+      "Transfer to an airtight container and store in the refrigerator."
+    ]
+  },
+  {
+    "id": "tempeh-tandoori-skewers",
+    "title": "Tempeh Tandoori Skewers",
+    "photo": "/recipes/tempeh-tandoori-skewers.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein",
+      "snack"
+    ],
+    "description": "Marinated, grilled tempeh skewers in a coconut-spice tandoori marinade.",
+    "ingredients": [
+      "250 g tempeh",
+      "1/2 cup coconut milk",
+      "2 tsp minced garlic",
+      "2 tsp minced ginger",
+      "1 tsp garam masala",
+      "1/2 tsp cumin powder",
+      "1/2 tsp coriander powder",
+      "2 tsp smoked paprika",
+      "1/4 tsp ground black pepper",
+      "1 tbsp fine sea salt",
+      "1 tbsp lemon juice",
+      "1/2 tsp mustard"
+    ],
+    "steps": [
+      "Prepare marinade: blend coconut milk, garlic, ginger, garam masala, cumin, coriander, smoked paprika, black pepper, sea salt, lemon juice, and mustard until smooth.",
+      "Marinate tempeh: cut tempeh into small pieces and add to the marinade for at least 30 minutes. Steam marinated tempeh 5 minutes, trim, and cut into small batons.",
+      "Prepare skewers: soak bamboo skewers in water 15 minutes. Thread tempeh onto skewers.",
+      "Grill: heat a char grill pan, lightly spray with oil. Cook skewers on each side until nicely charred."
+    ]
+  },
+  {
+    "id": "baked-sweet-potato-paprika-thyme",
+    "title": "Baked Sweet Potato with Sweet Paprika and Thyme",
+    "photo": "/recipes/baked-sweet-potato-paprika-thyme.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "snack"
+    ],
+    "description": "Roasted sweet potato wedges with paprika and thyme.",
+    "ingredients": [
+      "2 large sweet potatoes – peeled (optional) and cut into wedges or cubes",
+      "2 tbsp olive oil",
+      "1 tsp sweet paprika",
+      "1/2 tsp dried thyme (or 1 tsp fresh thyme leaves)",
+      "Salt – to taste",
+      "Black pepper – optional"
+    ],
+    "steps": [
+      "Preheat oven to 200°C (400°F). Line a baking tray with parchment paper.",
+      "Place sweet potato wedges or cubes in a large bowl.",
+      "Add olive oil, sweet paprika, thyme, salt (and pepper if using). Toss to coat evenly.",
+      "Spread in a single layer on the tray. Roast 25-30 minutes, turning halfway, until golden and tender.",
+      "Serve hot as a side dish or snack."
+    ]
+  },
+  {
+    "id": "avocado-salad-parsley",
+    "title": "Avocado Salad with Parsley",
+    "photo": "/recipes/avocado-salad-parsley.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A fresh, simple salad of avocado, tomato, cucumber, and parsley in a lime dressing.",
+    "ingredients": [
+      "2 ripe avocados – diced",
+      "1 cup cherry tomatoes or 2 medium tomatoes – diced",
+      "1 cucumber – diced",
+      "2 tbsp olive oil",
+      "Juice of 1 lime",
+      "2 tbsp fresh parsley – finely chopped",
+      "Salt – to taste",
+      "Black pepper – to taste"
+    ],
+    "steps": [
+      "In a medium bowl, combine avocado, tomato, cucumber, and parsley.",
+      "In a small bowl, whisk olive oil, lime juice, salt, and black pepper.",
+      "Pour dressing over the salad and gently toss to coat.",
+      "Serve immediately for the freshest flavor."
+    ]
+  },
+  {
+    "id": "three-color-salad",
+    "title": "Three-Color Salad (Rucola, Beetroot, White Cabbage)",
+    "photo": "/recipes/three-color-salad.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A vibrant, cleansing salad of arugula, beetroot, and shredded cabbage with a lime dressing.",
+    "ingredients": [
+      "1 cup rucola (arugula)",
+      "1 small beetroot, cooked or roasted, thinly sliced or julienned",
+      "1 cup white cabbage, finely shredded",
+      "Optional garnish: toasted nuts (walnut, almond, or sunflower seed)",
+      "2 tbsp olive oil",
+      "1 tbsp lime juice (freshly squeezed)",
+      "Salt & black pepper to taste"
+    ],
+    "steps": [
+      "Boil or roast beetroot until tender, cool, and slice thinly. Shred white cabbage finely. Wash and dry rucola leaves.",
+      "Whisk together olive oil, lime juice, salt, and black pepper.",
+      "Arrange rucola, cabbage, and beetroot in a serving bowl or plate. Drizzle with dressing.",
+      "Toss gently just before serving. Enjoy fresh as a side dish."
+    ]
+  },
+  {
+    "id": "waldorf-salad-vegan",
+    "title": "Waldorf Salad (Vegan Version)",
+    "photo": "/recipes/waldorf-salad-vegan.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A creamy vegan mayo-dressed salad of romaine, apple, celery, and raisins.",
+    "ingredients": [
+      "1 small head baby romaine, roughly chopped",
+      "1 green tomato, diced small",
+      "1 apple (green or red), diced (skin on)",
+      "1 stalk celery, thinly sliced",
+      "2 tbsp raisins (or sultanas)",
+      "Dressing: 3 tbsp vegan mayonnaise",
+      "1 tsp lemon juice or apple cider vinegar",
+      "1 tsp maple syrup (optional)",
+      "Salt and black pepper, to taste",
+      "Optional garnish: crushed walnuts or pumpkin seeds, fresh parsley, a few grapes"
+    ],
+    "steps": [
+      "Mix vegan mayo, lemon juice, maple syrup, salt, and black pepper. Whisk until smooth.",
+      "In a large bowl, combine romaine, green tomato, apple, celery, and raisins.",
+      "Gently fold in the dressing until evenly coated.",
+      "Chill 10-15 minutes if desired, then serve fresh as a light lunch or side dish."
+    ]
+  },
+  {
+    "id": "vegan-mayonnaise",
+    "title": "Vegan Mayonnaise (Soy Milk Base)",
+    "photo": "/recipes/vegan-mayonnaise.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A simple emulsified soy-milk mayonnaise you can make at home.",
+    "ingredients": [
+      "1/2 cup soy milk (unsweetened, room temperature)",
+      "1 cup neutral oil (sunflower, canola, or light olive oil)",
+      "1 1/2 tsp apple cider vinegar or lemon juice",
+      "1/2 tsp mustard (Dijon or yellow)",
+      "1/2 tsp salt (adjust to taste)",
+      "Optional: a pinch of garlic powder or maple syrup"
+    ],
+    "steps": [
+      "Add soy milk, vinegar (or lemon juice), mustard, and salt to a tall container or blender jar.",
+      "Start blending on medium speed. Slowly drizzle in the oil in a thin, steady stream while blending continuously until thick and creamy (1-2 minutes).",
+      "Adjust texture: if too thin, blend longer or add more oil; if too thick, add 1-2 tsp soy milk. Taste and adjust seasoning.",
+      "Transfer to a clean jar and refrigerate. Keeps up to 7 days."
+    ]
+  },
+  {
+    "id": "protein-salad-tahini-dressing",
+    "title": "Protein Salad with Tahini Dressing",
+    "photo": "/recipes/protein-salad-tahini-dressing.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A hearty mixed-bean salad with soaked seeds and a creamy tahini-lemon dressing.",
+    "ingredients": [
+      "1 cup mixed beans (chickpeas, red beans, black beans – cooked or canned)",
+      "1 tbsp pumpkin seeds (soaked 30 min, drained)",
+      "1 tbsp sunflower seeds (soaked 30 min, drained)",
+      "6-8 cherry tomatoes – halved",
+      "1 small head baby romaine – chopped or torn",
+      "Optional: cucumber, fresh mint or parsley",
+      "Dressing: 2 tbsp tahini",
+      "1 tbsp lemon juice",
+      "1 small garlic clove – minced (optional)",
+      "1-2 tbsp water (to thin)",
+      "1 tsp maple syrup (in place of honey)",
+      "Salt & black pepper to taste"
+    ],
+    "steps": [
+      "Whisk tahini, lemon juice, garlic, salt, and pepper. Add water gradually until smooth and creamy.",
+      "In a large bowl, combine beans, soaked seeds, cherry tomatoes, and romaine.",
+      "Pour the tahini dressing over and toss gently to coat.",
+      "Garnish with extra seeds or chopped herbs. Enjoy chilled or at room temperature."
+    ]
+  },
+  {
+    "id": "chayote-mango-salad",
+    "title": "Chayote–Mango Salad with Raisins & Parsley",
+    "photo": "/recipes/chayote-mango-salad.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A refreshing salad of julienned chayote and mango in a cumin-lime dressing.",
+    "ingredients": [
+      "1 medium chayote squash – peeled, seeded, julienned or thinly sliced",
+      "1 small ripe but firm mango – peeled, julienned or diced",
+      "2 tbsp fresh parsley – finely chopped",
+      "Dressing: 2 tbsp olive oil (optional)",
+      "Juice of 1 lime",
+      "1/2 tsp ground cumin",
+      "1/2 tsp ground coriander",
+      "1/2 tsp sweet paprika",
+      "Salt – to taste",
+      "Black pepper – to taste"
+    ],
+    "steps": [
+      "Peel, halve, and seed chayote; julienne or slice thinly. Blanch 1-2 minutes if a softer texture is preferred, then drain and cool.",
+      "Combine chayote, mango, and parsley in a bowl.",
+      "Whisk lime juice, olive oil (if using), cumin, coriander, sweet paprika, salt, and pepper until smooth.",
+      "Pour dressing over the salad mixture and toss gently to coat.",
+      "Taste and adjust; chill or serve immediately."
+    ]
+  },
+  {
+    "id": "butternut-squash-salad-maple",
+    "title": "Butternut Squash Salad with Maple Dressing",
+    "photo": "/recipes/butternut-squash-salad-maple.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "Roasted butternut squash over arugula and kale with pomegranate and a maple-Dijon dressing.",
+    "ingredients": [
+      "2 cups butternut squash – peeled and cubed (about 1.5 cm pieces)",
       "1 tbsp olive oil",
-      "handful cherry tomatoes, halved",
-      "fresh parsley and cilantro, to garnish"
+      "Salt & black pepper to taste",
+      "1 cup rucola (arugula)",
+      "1 cup kale – stems removed, chopped",
+      "1/4 cup pomegranate seeds",
+      "Optional: roasted walnuts or pumpkin seeds",
+      "Dressing: 2 tbsp olive oil",
+      "1 tbsp maple syrup",
+      "1 tbsp apple cider vinegar or lemon juice",
+      "1 tsp Dijon mustard",
+      "Salt & black pepper to taste"
     ],
     "steps": [
-      "Heat olive oil in a wide pan over medium heat.",
-      "Crumble in the tofu and sprinkle with turmeric, smoked paprika, and nutritional yeast.",
-      "Cook for 7-9 minutes, stirring gently, until warmed through and lightly crisp at the edges.",
-      "Toss in cherry tomatoes just before serving.",
-      "Top generously with fresh herbs and serve warm."
+      "Preheat oven to 200°C (400°F). Toss cubed butternut with olive oil, salt, and pepper. Roast 25-30 minutes until golden and tender. Cool slightly.",
+      "Massage chopped kale gently with a little olive oil and salt for 1 minute to soften. Add rucola and toss.",
+      "Whisk dressing ingredients until smooth.",
+      "Add roasted butternut, pomegranate seeds, and any nuts/seeds to the greens. Drizzle with maple dressing and toss.",
+      "Serve immediately or chill briefly."
     ]
   },
   {
-    "id": "cinnamon-spice-loaf",
-    "title": "Cinnamon Spice Loaf",
-    "photo": "/recipes/cinnamon-spice-loaf.png",
-    "tags": ["vegan", "gluten-free", "dessert", "snack"],
-    "description": "A warmly spiced, gluten-free tea loaf with cinnamon and sesame, sliced and finished with strawberry and mint.",
+    "id": "syrian-salad",
+    "title": "Syrian Salad (Romaine Salad with Za'atar Dressing)",
+    "photo": "/recipes/syrian-salad.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A crisp romaine salad with tomato, cucumber, mint, and a za'atar-olive oil dressing.",
     "ingredients": [
-      "1 3/4 cups gluten-free flour blend",
-      "1 tsp baking soda",
-      "2 tsp ground cinnamon",
-      "1/2 cup coconut sugar",
-      "1/3 cup melted coconut oil",
-      "1 cup plant milk + 1 tsp apple cider vinegar",
-      "1 tbsp sesame seeds"
+      "4 cups Romaine lettuce, chopped",
+      "1 cup diced tomato",
+      "1 cup diced cucumber",
+      "1/2 cup thinly sliced red onion",
+      "1/4 cup minced parsley",
+      "1/4 cup minced fresh mint or 1 tbsp dried mint",
+      "2 cloves garlic, grated/crushed",
+      "1/4 cup olive oil",
+      "1/4 cup lemon juice",
+      "2 tbsp za'atar",
+      "Salt and pepper, to taste"
     ],
     "steps": [
-      "Preheat oven to 350°F (175°C) and line a loaf pan.",
-      "Combine plant milk and vinegar, set aside to curdle slightly.",
-      "Whisk dry ingredients together in a large bowl.",
-      "Add wet ingredients and melted coconut oil, stir until just combined.",
-      "Pour into loaf pan, top with sesame seeds, and bake 45-50 minutes.",
-      "Cool fully before slicing; serve with fresh strawberry and mint."
+      "Place lettuce, tomato, cucumber, onion, parsley, and mint in a large salad bowl.",
+      "Squeeze lemon juice over the bowl. Grate garlic directly over the salad.",
+      "Drizzle with olive oil and sprinkle with za'atar. Season with salt and pepper.",
+      "Gently toss and check seasoning before serving."
     ]
   },
   {
-    "id": "lemon-olive-oil-cake",
-    "title": "Lemon Olive Oil Cake",
-    "photo": "/recipes/lemon-olive-oil-cake.png",
-    "tags": ["vegan", "gluten-free", "dessert"],
-    "description": "A bright, moist gluten-free olive oil cake with fresh lemon, delicate and not-too-sweet.",
+    "id": "brown-lentil-salad",
+    "title": "Brown Lentil Salad",
+    "photo": "/recipes/brown-lentil-salad.png",
+    "tags": [
+      "vegan",
+      "gluten-free",
+      "high-protein"
+    ],
+    "description": "A simple lentil salad with cherry tomatoes, parsley, and a cumin-lime dressing.",
     "ingredients": [
-      "2 cups gluten-free flour blend",
-      "3/4 cup extra virgin olive oil",
-      "3/4 cup coconut sugar",
-      "zest and juice of 2 lemons",
-      "1 cup plant milk",
-      "1 tsp baking powder",
-      "1/2 tsp baking soda"
+      "1 1/2 cups cooked brown lentils (or 1 can, drained & rinsed)",
+      "1 cup cherry tomatoes – halved",
+      "2 tbsp fresh parsley – finely chopped",
+      "2 tbsp olive oil",
+      "Juice of 1 lime",
+      "1/2 tsp ground cumin",
+      "Salt – to taste",
+      "Black pepper – to taste"
     ],
     "steps": [
-      "Preheat oven to 350°F (175°C) and grease a loaf pan.",
-      "Whisk olive oil, coconut sugar, lemon zest, and lemon juice together.",
-      "Add plant milk and whisk to combine.",
-      "Fold in flour, baking powder, and baking soda until just combined.",
-      "Pour into pan and bake 40-45 minutes until golden and set.",
-      "Cool, slice, and top with fresh strawberry."
+      "If using dried lentils, cook until just tender, drain, and let cool.",
+      "In a bowl, mix lentils, cherry tomatoes, and parsley.",
+      "Whisk olive oil, lime juice, cumin, salt, and black pepper.",
+      "Pour dressing over the lentil mixture and toss to coat.",
+      "Serve chilled or at room temperature."
     ]
   },
   {
-    "id": "vanilla-sesame-loaf",
-    "title": "Vanilla Sesame Loaf",
-    "photo": "/recipes/vanilla-sesame-loaf.png",
-    "tags": ["vegan", "gluten-free", "dessert", "snack"],
-    "description": "A soft, subtly sweet vanilla loaf flecked with black sesame, finished with fresh strawberry, mint, and edible flowers.",
+    "id": "olivier-salad",
+    "title": "Olivier Salad (Russian Potato Salad)",
+    "photo": "/recipes/olivier-salad.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A classic potato salad with carrots, peas, and pickles in a mustard-mayo dressing.",
     "ingredients": [
-      "1 3/4 cups gluten-free flour blend",
-      "1/2 cup coconut sugar",
-      "1/3 cup melted coconut oil",
-      "1 cup plant milk + 1 tsp apple cider vinegar",
-      "1 tbsp vanilla extract",
-      "1 tbsp black sesame seeds",
-      "1 tsp baking powder"
+      "3 medium potatoes – peeled and diced",
+      "2 medium carrots – diced",
+      "1 cup green peas (fresh or frozen)",
+      "3-4 pickled cucumbers – finely diced",
+      "Dressing: 1/2 cup vegan mayo",
+      "1 tsp Dijon mustard",
+      "Salt and black pepper to taste",
+      "1 tbsp lemon juice or pickle brine",
+      "Garnish: fresh dill or parsley – finely chopped"
     ],
     "steps": [
-      "Preheat oven to 350°F (175°C) and line a loaf pan.",
-      "Combine plant milk and vinegar; let sit 5 minutes.",
-      "Whisk dry ingredients in a large bowl.",
-      "Add wet ingredients and vanilla, stirring until just combined.",
-      "Fold in black sesame seeds, reserving a pinch for topping.",
-      "Bake 45-50 minutes until a toothpick comes out clean. Cool, slice, and garnish."
+      "Boil potatoes, carrots, and peas separately until tender (don't overcook). Drain and cool completely.",
+      "In a large bowl, combine cooled potatoes, carrots, peas, and diced pickles.",
+      "Whisk vegan mayo, mustard, lemon juice (or brine), salt, and pepper.",
+      "Pour dressing over the salad and mix gently until well coated.",
+      "Refrigerate at least 30 minutes before serving. Garnish with dill or parsley."
     ]
   },
   {
-    "id": "chai-spice-bread",
-    "title": "Chai Spice Bread",
-    "photo": "/recipes/chai-spice-bread.png",
-    "tags": ["vegan", "gluten-free", "dessert", "snack"],
-    "description": "A cozy chai-spiced quick bread with warming cardamom, ginger, and clove — perfect alongside tea after an evening practice.",
+    "id": "moringa-soup",
+    "title": "Moringa Soup",
+    "photo": "/recipes/moringa-soup.png",
+    "tags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "description": "A light, brothy soup with moringa leaves, sweet corn, and basil.",
     "ingredients": [
-      "1 3/4 cups gluten-free flour blend",
-      "1/2 cup coconut sugar",
-      "2 tsp chai spice blend (cinnamon, cardamom, ginger, clove)",
-      "1/3 cup melted coconut oil",
-      "1 cup plant milk + 1 tsp apple cider vinegar",
-      "1 tsp baking soda",
-      "sesame seeds, to top"
+      "200g fresh moringa",
+      "10g sweet basil leaves",
+      "1 cup corn kernels",
+      "1 shallot, sliced",
+      "1 liter water",
+      "1/2 tbsp salt",
+      "1/2 tsp mushroom powder"
     ],
     "steps": [
-      "Preheat oven to 350°F (175°C) and line a loaf pan.",
-      "Combine plant milk and vinegar; set aside.",
-      "Whisk flour, coconut sugar, chai spices, and baking soda together.",
-      "Stir in wet ingredients until just combined.",
-      "Pour into pan, top with sesame seeds, and bake 45-50 minutes.",
-      "Cool before slicing and serving with fresh strawberry and mint."
-    ]
-  },
-  {
-    "id": "turmeric-carrot-elixir",
-    "title": "Turmeric Carrot Elixir",
-    "photo": "/recipes/turmeric-carrot-elixir.png",
-    "tags": ["vegan", "gluten-free", "drink"],
-    "description": "A bright, anti-inflammatory carrot and turmeric juice, sipped slow before or after practice.",
-    "ingredients": [
-      "4 large carrots, juiced",
-      "1 inch fresh turmeric root, juiced (or 1/2 tsp ground turmeric)",
-      "1 inch fresh ginger, juiced",
-      "juice of 1/2 orange",
-      "pinch of black pepper",
-      "fresh mint, to garnish"
-    ],
-    "steps": [
-      "Juice the carrots, turmeric, and ginger together.",
-      "Stir in fresh orange juice and a pinch of black pepper (helps absorb turmeric).",
-      "Pour over ice and garnish with fresh mint.",
-      "Sip slowly and enjoy."
-    ]
-  },
-  {
-    "id": "baked-lentil-bites",
-    "title": "Baked Lentil & Walnut Bites",
-    "photo": "/recipes/baked-lentil-bites.png",
-    "tags": ["vegan", "gluten-free", "high-protein", "snack"],
-    "description": "Savory baked lentil-walnut patties finished with a bright pepper garnish, served over crisp lettuce.",
-    "ingredients": [
-      "1 1/2 cups cooked lentils",
-      "1/2 cup walnuts, finely chopped",
-      "1/4 cup gluten-free oat flour",
-      "1 tbsp tahini",
-      "1 clove garlic, minced",
-      "1 tsp cumin",
-      "salt and pepper, to taste",
-      "diced red bell pepper and lettuce, to serve"
-    ],
-    "steps": [
-      "Preheat oven to 375°F (190°C) and line a baking sheet.",
-      "Mash lentils lightly, leaving some texture.",
-      "Mix in walnuts, oat flour, tahini, garlic, cumin, salt, and pepper.",
-      "Form into small patties and place on baking sheet.",
-      "Bake 20-25 minutes, flipping halfway, until firm and golden.",
-      "Serve over lettuce, topped with diced red bell pepper."
+      "Boil water with shallot and corn until corn is tender. Season with salt and mushroom powder.",
+      "Reduce heat, add moringa and sweet basil leaves.",
+      "Simmer briefly and serve hot."
     ]
   }
 ]
