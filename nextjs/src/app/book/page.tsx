@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
 import { PageShell } from "@/components/page-shell";
+import { LiveGroupClasses } from "@/features/booking/live-group-classes";
 
 const CALENDLY_URL = "https://calendly.com/contact-yogawithlisa/30min";
 
@@ -10,8 +11,8 @@ type Category = {
   id: string;
   label: string;
   desc: string;
-  embedType: "calendly" | "iframe";
-  embedUrl: string;
+  embedType: "calendly" | "iframe" | "custom";
+  embedUrl?: string;
 };
 
 const categories: Category[] = [
@@ -19,8 +20,7 @@ const categories: Category[] = [
     id: "group",
     label: "Live Group Classes",
     desc: "Join a local group class in a shared, supportive space.",
-    embedType: "iframe",
-    embedUrl: "https://schedule.yogawithlisa.ai",
+    embedType: "custom",
   },
   {
     id: "private",
@@ -91,24 +91,30 @@ export default function Book() {
         <div className="mx-auto max-w-4xl">
           <div className="rounded-[20px] border border-[var(--color-line)] p-4 sm:p-6">
             <h2 className="mb-1 font-serif text-xl text-[var(--color-ink)]">{activeCategory.label}</h2>
-            <p className="mb-4 text-sm text-[var(--color-ink-soft)]">
-              {activeCategory.embedType === "calendly"
-                ? "Pick a time below, this uses Lisa's Calendly."
-                : "Pick a time below."}
-            </p>
-            <div className="overflow-hidden rounded-[20px]">
-              {activeCategory.embedType === "calendly" ? (
-                <InlineWidget url={activeCategory.embedUrl} styles={{ height: "700px", width: "100%" }} />
-              ) : (
-                <iframe
-                  key={activeCategory.id}
-                  src={activeCategory.embedUrl}
-                  title={activeCategory.label}
-                  style={{ height: "700px", width: "100%", border: 0 }}
-                  loading="lazy"
-                />
-              )}
-            </div>
+            {activeCategory.embedType !== "custom" && (
+              <p className="mb-4 text-sm text-[var(--color-ink-soft)]">
+                {activeCategory.embedType === "calendly"
+                  ? "Pick a time below, this uses Lisa's Calendly."
+                  : "Pick a time below."}
+              </p>
+            )}
+            {activeCategory.embedType === "custom" ? (
+              <LiveGroupClasses />
+            ) : (
+              <div className="overflow-hidden rounded-[20px]">
+                {activeCategory.embedType === "calendly" ? (
+                  <InlineWidget url={activeCategory.embedUrl!} styles={{ height: "700px", width: "100%" }} />
+                ) : (
+                  <iframe
+                    key={activeCategory.id}
+                    src={activeCategory.embedUrl}
+                    title={activeCategory.label}
+                    style={{ height: "700px", width: "100%", border: 0 }}
+                    loading="lazy"
+                  />
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>
