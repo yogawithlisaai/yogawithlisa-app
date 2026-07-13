@@ -29,10 +29,10 @@ function recommendationFor(checkin: any) {
     reason = "Your check-in suggests you could use some calming down-regulation today.";
   } else if (mood.includes("tired") || energy <= 2) {
     style = "Yin";
-    reason = "Lower energy today — a slow, supported Yin practice will meet you gently.";
+    reason = "Lower energy today, a slow, supported Yin practice will meet you gently.";
   } else if (mood.includes("energized") || mood.includes("joyful") || energy >= 4) {
     style = "Power";
-    reason = "You've got energy to spare — channel it into a stronger practice.";
+    reason = "You've got energy to spare, channel it into a stronger practice.";
   } else if (checkin?.cyclePhase === "menstrual") {
     style = "Restorative";
     reason = "During menstruation, gentle and restorative movement often feels best.";

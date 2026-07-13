@@ -11,7 +11,7 @@ export default function MindShiftPage() {
             Mind<em className="italic">Shift</em>
           </h1>
           <p className="mt-4 max-w-xl text-white/60">
-            Chat with your practice companion — log sessions, ask for recommendations, and see your
+            Chat with your practice companion, log sessions, ask for recommendations, and see your
             streaks build.
           </p>
 

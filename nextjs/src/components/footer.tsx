@@ -7,7 +7,7 @@ export function Footer() {
         <div className="max-w-sm">
           <p className="font-serif text-2xl italic lowercase text-white">yoga with lisa</p>
           <p className="mt-4 text-sm leading-relaxed text-white/55">
-            Helping you find <em className="italic">stillness</em> in a loud world — one grounded
+            Helping you find <em className="italic">stillness</em> in a loud world, one grounded
             practice at a time.
           </p>
         </div>

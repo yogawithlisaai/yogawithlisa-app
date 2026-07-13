@@ -83,7 +83,7 @@ export default function Classes() {
             Practice on your <em className="italic">time</em>
           </h1>
           <p className="mt-4 max-w-xl text-[var(--color-ink-soft)]">
-            Filter by duration, level, and style — or start with the free vertical series below,
+            Filter by duration, level, and style, or start with the free vertical series below,
             made for practicing straight from your phone.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function Classes() {
       <section className="bg-[var(--color-cream)] px-5 py-16 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-6">
-            <h2 className="font-serif text-2xl text-[var(--color-ink)]">Grounded Mornings — Free Series</h2>
+            <h2 className="font-serif text-2xl text-[var(--color-ink)]">Grounded Mornings: Free Series</h2>
             <p className="text-sm text-[var(--color-ink-soft)]">Vertical format · Free forever</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-3">

@@ -13,7 +13,7 @@ export function PracticeHistory({ logs }: { logs: PracticeLog[] }) {
       <h3 className="font-serif text-lg text-white">Practice history</h3>
       <div className="mt-4 max-h-96 space-y-3 overflow-y-auto pr-1">
         {logs.length === 0 && (
-          <p className="text-sm text-white/50">No sessions logged yet — tell MindShift about your practice!</p>
+          <p className="text-sm text-white/50">No sessions logged yet. Tell MindShift about your practice!</p>
         )}
         {logs.map((log) => (
           <div key={log.id} className="rounded-xl bg-white/5 px-4 py-3">

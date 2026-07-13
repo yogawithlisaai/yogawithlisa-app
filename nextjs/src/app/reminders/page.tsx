@@ -48,11 +48,11 @@ export default function Reminders() {
       return res.json();
     },
     onSuccess: (data: any) => {
-      setTestResult(data.simulated ? "Simulated (no Twilio credentials set yet) — check server logs." : "Sent!");
+      setTestResult(data.simulated ? "Simulated (no Twilio credentials set yet). Check server logs." : "Sent!");
       setTimeout(() => setTestResult(null), 4000);
     },
     onError: () => {
-      setTestResult("Couldn't send — make sure you're opted in with a phone number saved.");
+      setTestResult("Couldn't send. Make sure you're opted in with a phone number saved.");
     },
   });
 
@@ -124,7 +124,7 @@ export default function Reminders() {
 
           <p className="mt-7 text-xs text-[var(--color-ink-soft)]">
             SMS is sent via Twilio. Until real Twilio credentials are added to the server
-            environment, test reminders are simulated (logged, not actually sent) — see the README
+            environment, test reminders are simulated (logged, not actually sent). See the README
             for setup.
           </p>
         </div>

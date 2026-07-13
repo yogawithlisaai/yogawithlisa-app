@@ -7,7 +7,7 @@
 const REMINDER_MESSAGES = [
   "🌿 Time to check in with yourself. Log today's practice or how you're feeling in Yoga with Lisa.",
   "✨ A few mindful minutes await. Open MindShift to log your practice or do a quick check-in.",
-  "🧘 Lisa here (well, her app) — how did you move today? Log it and keep your streak alive.",
+  "🧘 Lisa here (well, her app). How did you move today? Log it and keep your streak alive.",
 ];
 
 function pickMessage() {

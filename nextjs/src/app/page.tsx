@@ -45,7 +45,7 @@ export default function Home() {
                 Grounded Mornings
               </h2>
               <p className="mt-3 max-w-md text-[var(--color-ink-soft)]">
-                A 3-part vertical-format series, made for your phone. Start your day grounded —
+                A 3-part vertical-format series, made for your phone. Start your day grounded,
                 free, always. Download the app to take it with you.
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function Home() {
             </h2>
             <p className="mt-5 max-w-md text-[var(--color-ink-soft)]">
               Lisa is a Berkeley-based yoga instructor who believes movement should meet you where
-              you are — no rigid shapes, no unattainable poses. Every class, recipe, and check-in
+              you are, no rigid shapes, no unattainable poses. Every class, recipe, and check-in
               here is built around one idea: find stillness first, strength follows.
             </p>
             <Link
@@ -120,7 +120,7 @@ export default function Home() {
             Ready to practice together?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-[var(--color-ink-soft)]">
-            Book a group class, a private session, or a discovery call — Lisa will meet you where
+            Book a group class, a private session, or a discovery call, and Lisa will meet you where
             you are.
           </p>
           <Link
