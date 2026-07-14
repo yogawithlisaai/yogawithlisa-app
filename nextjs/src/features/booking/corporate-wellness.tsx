@@ -33,7 +33,7 @@ const PROGRAMS = [
       "Optional live Zoom sessions",
       "Onboarding kit & comms templates",
     ],
-    packagesHref: `${CORPORATE_URL}/corporate-packages.html`,
+    packagesHref: "https://www.yogawithlisa.ai/corporate-packages.html",
   },
   {
     title: "Student / Grad Package",
@@ -46,7 +46,7 @@ const PROGRAMS = [
       ".edu discounts & group rates",
       "Fast setup for departments & orgs",
     ],
-    packagesHref: `${CORPORATE_URL}/student-wellness.html`,
+    packagesHref: "https://www.yogawithlisa.ai/student-wellness.html",
   },
 ];
 
