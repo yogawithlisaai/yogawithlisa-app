@@ -241,7 +241,7 @@ export function LiveGroupClasses() {
               const headerId = `month-header-${i}`;
               const panelId = `month-panel-${i}`;
               return (
-                <div key={section.label} className="mb-[0.6rem] overflow-hidden rounded-xl border border-black bg-white">
+                <div key={section.label} className="mb-[0.6rem] overflow-hidden rounded-xl border border-black bg-transparent">
                   <button
                     type="button"
                     id={headerId}
