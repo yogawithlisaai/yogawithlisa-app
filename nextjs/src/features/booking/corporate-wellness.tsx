@@ -24,7 +24,7 @@ const BENEFITS = [
 const PROGRAMS = [
   {
     title: "Corporate / Staff Package",
-    image: `${CORPORATE_URL}/images/corporate-staff.jpg`,
+    image: "/images/corporate/corporate-staff.png",
     description:
       "Weekly live or on-demand yoga + mindfulness with optional strength add-ons. Access to the full class library, monthly wellness prompts, and team challenges. Great for departments or company-wide.",
     bullets: [
@@ -37,7 +37,7 @@ const PROGRAMS = [
   },
   {
     title: "Student / Grad Package",
-    image: `${CORPORATE_URL}/images/student-grad.jpg`,
+    image: "/images/corporate/student-grad.png",
     description:
       "Designed for academic schedules: shorter modules, exam-week de-stress flows, and study breaks. Student pricing, .edu perks, and group options for labs, teams, & clubs.",
     bullets: [
@@ -143,7 +143,7 @@ export function CorporateWellness() {
         {/* Membership invite band */}
         <div
           className="relative mt-10 overflow-hidden rounded-xl bg-cover bg-center px-6 py-12 text-center"
-          style={{ backgroundImage: `url('${CORPORATE_URL}/images/corporate-band.jpg')` }}
+          style={{ backgroundImage: "url('/images/corporate/workplace-cta.png')" }}
         >
           <div className="absolute inset-0 bg-black/55" />
           <div className="relative">
