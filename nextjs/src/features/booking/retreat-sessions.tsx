@@ -237,10 +237,7 @@ export function RetreatSessions() {
               A soul-nourishing yoga retreat in Bali to reconnect with your rhythm, your body, and the beauty of simply being.
             </p>
             <div className="flex flex-wrap justify-center gap-2.5">
-              <PillLink href={APPLY_HREF}>Apply</PillLink>
-              <PillLink href={BALI_PAGE} outline onDark>
-                Explore Experience
-              </PillLink>
+              <PillLink href={APPLY_HREF}>Explore Experience</PillLink>
             </div>
           </div>
         </div>
