@@ -219,23 +219,29 @@ export function RetreatSessions() {
     <div className="mx-auto my-8 max-w-[1120px]">
       <div className="rounded-3xl bg-[#f5eee4] px-5 pb-7 pt-7 shadow-[0_20px_45px_rgba(0,0,0,0.05)] md:px-8 md:pb-8 md:pt-10">
         {/* Hero */}
-        <div className="rounded-xl bg-[var(--color-ink)] px-6 py-14 text-center text-white">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/60">
-            Bali Retreat April 2027 &middot; Canggu, Indonesia
-          </p>
-          <h2 className="mb-4 font-serif text-3xl sm:text-4xl">
-            Return to
-            <br />
-            Your Essence
-          </h2>
-          <p className="mx-auto mb-6 max-w-lg text-sm text-white/75">
-            A soul-nourishing yoga retreat in Bali to reconnect with your rhythm, your body, and the beauty of simply being.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            <PillLink href={APPLY_HREF}>Apply</PillLink>
-            <PillLink href={BALI_PAGE} outline onDark>
-              Explore Experience
-            </PillLink>
+        <div
+          className="relative overflow-hidden rounded-xl bg-cover bg-center px-6 py-14 text-center text-white"
+          style={{ backgroundImage: "url('/images/retreat/bali-retreat.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="relative">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/60">
+              Bali Retreat April 2027 &middot; Canggu, Indonesia
+            </p>
+            <h2 className="mb-4 font-serif text-3xl sm:text-4xl">
+              Return to
+              <br />
+              Your Essence
+            </h2>
+            <p className="mx-auto mb-6 max-w-lg text-sm text-white/75">
+              A soul-nourishing yoga retreat in Bali to reconnect with your rhythm, your body, and the beauty of simply being.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              <PillLink href={APPLY_HREF}>Apply</PillLink>
+              <PillLink href={BALI_PAGE} outline onDark>
+                Explore Experience
+              </PillLink>
+            </div>
           </div>
         </div>
 
@@ -328,19 +334,25 @@ export function RetreatSessions() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-10 rounded-xl bg-[var(--color-ink)] px-6 py-12 text-center text-white">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-white/60">This is your time</p>
-          <h2 className="mb-3 font-serif text-2xl">
-            Come home
-            <br />
-            to you.
-          </h2>
-          <p className="mx-auto mb-6 max-w-md text-sm text-white/75">
-            Step away from the noise and return to what truly matters. Your transformation awaits in Bali.
-          </p>
-          <PillLink href={APPLY_HREF} outline onDark>
-            Apply &rarr;
-          </PillLink>
+        <div
+          className="relative mt-10 overflow-hidden rounded-xl bg-cover bg-center px-6 py-12 text-center text-white"
+          style={{ backgroundImage: "url('/images/retreat/teachers-hero.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="relative">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-white/60">This is your time</p>
+            <h2 className="mb-3 font-serif text-2xl">
+              Come home
+              <br />
+              to you.
+            </h2>
+            <p className="mx-auto mb-6 max-w-md text-sm text-white/75">
+              Step away from the noise and return to what truly matters. Your transformation awaits in Bali.
+            </p>
+            <PillLink href={APPLY_HREF} outline onDark>
+              Apply &rarr;
+            </PillLink>
+          </div>
         </div>
 
         <div className="mt-8 text-center">
