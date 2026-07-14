@@ -4,6 +4,8 @@ import { useState } from "react";
 import { InlineWidget } from "react-calendly";
 import { PageShell } from "@/components/page-shell";
 import { LiveGroupClasses } from "@/features/booking/live-group-classes";
+import { CorporateWellness } from "@/features/booking/corporate-wellness";
+import { RetreatSessions } from "@/features/booking/retreat-sessions";
 
 const CALENDLY_URL = "https://calendly.com/contact-yogawithlisa/30min";
 
@@ -33,15 +35,13 @@ const categories: Category[] = [
     id: "corporate",
     label: "Corporate Wellness",
     desc: "On-site or virtual sessions for teams, off-sites, and wellness days.",
-    embedType: "iframe",
-    embedUrl: "https://corporate.yogawithlisa.ai",
+    embedType: "custom",
   },
   {
     id: "retreat",
     label: "Retreat Sessions",
     desc: "Immersive multi-day retreat programming and workshops.",
-    embedType: "iframe",
-    embedUrl: "https://bali.yogawithlisa.ai",
+    embedType: "custom",
   },
   {
     id: "discovery",
@@ -99,7 +99,13 @@ export default function Book() {
               </p>
             )}
             {activeCategory.embedType === "custom" ? (
-              <LiveGroupClasses />
+              activeCategory.id === "group" ? (
+                <LiveGroupClasses />
+              ) : activeCategory.id === "corporate" ? (
+                <CorporateWellness />
+              ) : (
+                <RetreatSessions />
+              )
             ) : (
               <div className="overflow-hidden rounded-[20px]">
                 {activeCategory.embedType === "calendly" ? (
