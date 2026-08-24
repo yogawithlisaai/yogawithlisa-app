@@ -29,6 +29,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-light.png"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-dark.png"
+          media="(prefers-color-scheme: dark)"
+        />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>
