@@ -6,7 +6,7 @@ const CALENDLY_URL = "https://calendly.com/contact-yogawithlisa/30min";
 
 const categories = [
   { id: "group", label: "In-Person Group Classes", desc: "Join a local group class in a shared, supportive space." },
-  { id: "private", label: "One-on-One Private Sessions", desc: "Fully personalized practice tailored to your body and goals." },
+  { id: "private", label: "One-on-One", desc: "Fully personalized practice tailored to your body and goals." },
   { id: "corporate", label: "Corporate Wellness", desc: "On-site or virtual sessions for teams, off-sites, and wellness days." },
   { id: "retreat", label: "Retreat Sessions", desc: "Immersive multi-day retreat programming and workshops." },
   { id: "discovery", label: "Discovery Call", desc: "Not sure what you need? Start with a free 30-minute call." },

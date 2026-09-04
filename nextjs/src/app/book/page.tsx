@@ -26,7 +26,7 @@ const categories: Category[] = [
   },
   {
     id: "private",
-    label: "One-on-One Private Sessions",
+    label: "One-on-One",
     desc: "Fully personalized practice tailored to your body and goals.",
     embedType: "calendly",
     embedUrl: CALENDLY_URL,
