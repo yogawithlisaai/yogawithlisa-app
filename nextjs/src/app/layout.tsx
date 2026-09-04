@@ -42,6 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="/favicon-dark.png"
           media="(prefers-color-scheme: dark)"
         />
+        {/* Fallback for browsers that ignore media queries on icon links */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body>
         <Providers>{children}</Providers>
