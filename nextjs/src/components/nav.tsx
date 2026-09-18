@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSession } from "@/lib/use-session";
+import { wellnessTrackerEnabled } from "@/lib/feature-flags";
 
 const links = [
   { href: "/classes", label: "Classes" },
   { href: "/recipes", label: "Recipes" },
   { href: "/mindshift", label: "MindShift" },
-  { href: "/wellness", label: "Wellness" },
+  ...(wellnessTrackerEnabled ? [{ href: "/wellness", label: "Wellness" }] : []),
   { href: "/book", label: "Book with Lisa" },
   { href: "/reminders", label: "Reminders" },
 ];

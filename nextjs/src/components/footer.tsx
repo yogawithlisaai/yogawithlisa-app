@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { wellnessTrackerEnabled } from "@/lib/feature-flags";
 
 export function Footer() {
   return (
@@ -19,7 +20,9 @@ export function Footer() {
               <li><Link href="/classes" className="hover:text-white">Classes</Link></li>
               <li><Link href="/recipes" className="hover:text-white">Recipes</Link></li>
               <li><Link href="/mindshift" className="hover:text-white">MindShift</Link></li>
-              <li><Link href="/wellness" className="hover:text-white">Wellness</Link></li>
+              {wellnessTrackerEnabled && (
+                <li><Link href="/wellness" className="hover:text-white">Wellness</Link></li>
+              )}
             </ul>
           </div>
           <div>

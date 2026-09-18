@@ -1,9 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { wellnessTrackerEnabled } from "./lib/feature-flags";
 
 // /mindshift is intentionally not here — signed-out visitors see it behind a client-side
 // scroll gate (<SignInGate>) instead of a server redirect, so it can preview then blur.
-const PROTECTED_PATHS = ["/wellness", "/reminders"];
+// /wellness is only protected while its feature flag is on — while it's off the page 404s
+// for everyone regardless of auth, so it shouldn't redirect to sign-in first.
+const PROTECTED_PATHS = wellnessTrackerEnabled ? ["/wellness", "/reminders"] : ["/reminders"];
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
