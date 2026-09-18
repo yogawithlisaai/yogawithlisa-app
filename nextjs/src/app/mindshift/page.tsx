@@ -4,9 +4,12 @@ import { useRef } from "react";
 import { PageShell } from "@/components/page-shell";
 import { SignInGate } from "@/components/sign-in-gate";
 import { MindShiftDashboard } from "@/features/mindshift/mindshift-dashboard";
+import { MindShiftPlaceholder } from "@/features/mindshift/mindshift-placeholder";
+import { useSession } from "@/lib/use-session";
 
 export default function MindShiftPage() {
   const gateSentinelRef = useRef<HTMLDivElement>(null);
+  const { session } = useSession();
 
   return (
     <PageShell>
@@ -29,7 +32,7 @@ export default function MindShiftPage() {
             copy="Create a free account to log sessions and chat with your practice companion."
           >
             <div className="mt-12">
-              <MindShiftDashboard />
+              {session ? <MindShiftDashboard /> : <MindShiftPlaceholder />}
             </div>
           </SignInGate>
         </div>
