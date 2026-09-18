@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageShell } from "@/components/page-shell";
+import { postJson } from "@/lib/fetch-json";
 
 export default function Reminders() {
   const qc = useQueryClient();
@@ -15,6 +16,7 @@ export default function Reminders() {
   const [optedIn, setOptedIn] = useState(false);
   const [preferredTime, setPreferredTime] = useState("18:00");
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [testResult, setTestResult] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,33 +28,26 @@ export default function Reminders() {
   }, [data]);
 
   const save = useMutation({
-    mutationFn: async () => {
-      const res = await fetch("/api/reminders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, optedIn, preferredTime }),
-      });
-      return res.json();
-    },
+    mutationFn: () => postJson("/api/reminders", { phone, optedIn, preferredTime }),
     onSuccess: () => {
       setSaved(true);
+      setSaveError(null);
       qc.invalidateQueries({ queryKey: ["reminders-optin"] });
       setTimeout(() => setSaved(false), 2500);
+    },
+    onError: (err: Error) => {
+      setSaveError(err.message);
     },
   });
 
   const sendTest = useMutation({
-    mutationFn: async () => {
-      const res = await fetch("/api/reminders/test", { method: "POST" });
-      if (!res.ok) throw new Error("failed");
-      return res.json();
-    },
-    onSuccess: (data: any) => {
+    mutationFn: () => postJson<{ simulated?: boolean }>("/api/reminders/test"),
+    onSuccess: (data) => {
       setTestResult(data.simulated ? "Simulated (no Twilio credentials set yet). Check server logs." : "Sent!");
       setTimeout(() => setTestResult(null), 4000);
     },
-    onError: () => {
-      setTestResult("Couldn't send. Make sure you're opted in with a phone number saved.");
+    onError: (err: Error) => {
+      setTestResult(err.message);
     },
   });
 
@@ -120,6 +115,7 @@ export default function Reminders() {
               Send test reminder
             </button>
           </div>
+          {saveError && <p className="mt-4 text-sm text-[#a4453a]">{saveError}</p>}
           {testResult && <p className="mt-4 text-sm text-[var(--color-ink-soft)]">{testResult}</p>}
 
           <p className="mt-7 text-xs text-[var(--color-ink-soft)]">

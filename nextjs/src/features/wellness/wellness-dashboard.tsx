@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { classCatalog } from "@/lib/classes";
+import { postJson } from "@/lib/fetch-json";
 
 const moods = ["Calm", "Energized", "Stressed", "Tired", "Anxious", "Joyful"];
 const cyclePhases = [
@@ -54,6 +55,7 @@ export function WellnessDashboard() {
   const [cyclePhase, setCyclePhase] = useState("not_tracking");
   const [notes, setNotes] = useState("");
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     if (data?.checkin) {
@@ -66,18 +68,15 @@ export function WellnessDashboard() {
   }, [data]);
 
   const save = useMutation({
-    mutationFn: async () => {
-      const res = await fetch("/api/checkins", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mood, energy, sleepRating, cyclePhase, notes }),
-      });
-      return res.json();
-    },
+    mutationFn: () => postJson("/api/checkins", { mood, energy, sleepRating, cyclePhase, notes }),
     onSuccess: () => {
       setSaved(true);
+      setSaveError(null);
       qc.invalidateQueries({ queryKey: ["checkin-today"] });
       setTimeout(() => setSaved(false), 2500);
+    },
+    onError: (err: Error) => {
+      setSaveError(err.message);
     },
   });
 
@@ -162,6 +161,7 @@ export function WellnessDashboard() {
             >
               {save.isPending ? "Saving..." : saved ? "Saved ✓" : "Save check-in"}
             </button>
+            {saveError && <p className="mt-3 text-sm text-[#f2b8ab]">{saveError}</p>}
           </div>
 
           {/* Recommendation + integrations */}
