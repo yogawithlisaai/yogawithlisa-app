@@ -1,13 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { PageShell } from "@/components/page-shell";
 import { createClient } from "@/lib/supabase/client";
 
 export default function SignUp() {
+  return (
+    <Suspense>
+      <SignUpForm />
+    </Suspense>
+  );
+}
+
+function SignUpForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect") || "/mindshift";
   const supabase = useMemo(() => createClient(), []);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,7 +46,7 @@ export default function SignUp() {
       setNotice("Check your email to confirm your account, then sign in.");
       return;
     }
-    router.push("/mindshift");
+    router.push(redirectTo);
     router.refresh();
   }
 
@@ -94,7 +104,10 @@ export default function SignUp() {
 
           <p className="mt-7 text-center text-sm text-[var(--color-ink-soft)]">
             Already have an account?{" "}
-            <Link href="/sign-in" className="font-semibold text-[var(--color-ink)] hover:underline">
+            <Link
+              href={`/sign-in?redirect=${encodeURIComponent(redirectTo)}`}
+              className="font-semibold text-[var(--color-ink)] hover:underline"
+            >
               Sign in
             </Link>
           </p>

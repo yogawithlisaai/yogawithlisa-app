@@ -1,7 +1,13 @@
+"use client";
+
+import { useRef } from "react";
 import { PageShell } from "@/components/page-shell";
+import { SignInGate } from "@/components/sign-in-gate";
 import { MindShiftDashboard } from "@/features/mindshift/mindshift-dashboard";
 
 export default function MindShiftPage() {
+  const gateSentinelRef = useRef<HTMLDivElement>(null);
+
   return (
     <PageShell>
       <section className="bg-[var(--color-dark)] px-5 pb-16 pt-32 sm:px-6 sm:pt-36">
@@ -15,9 +21,17 @@ export default function MindShiftPage() {
             streaks build.
           </p>
 
-          <div className="mt-12">
-            <MindShiftDashboard />
-          </div>
+          <div ref={gateSentinelRef} aria-hidden="true" />
+
+          <SignInGate
+            sentinelRef={gateSentinelRef}
+            headline="Track your practice"
+            copy="Create a free account to log sessions and chat with your practice companion."
+          >
+            <div className="mt-12">
+              <MindShiftDashboard />
+            </div>
+          </SignInGate>
         </div>
       </section>
     </PageShell>

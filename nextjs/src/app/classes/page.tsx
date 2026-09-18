@@ -1,7 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { PageShell } from "@/components/page-shell";
+import { SignInGate } from "@/components/sign-in-gate";
+import { ClassPlayer } from "@/components/class-player";
 import { classCatalog, type ClassVideo } from "@/lib/classes";
 
 const allVideos = classCatalog;
@@ -16,23 +18,11 @@ const durations = [
 ] as { label: string; max: number; min?: number }[];
 const styles = Array.from(new Set(allVideos.map((v) => v.style)));
 
-function embedUrl(v: ClassVideo) {
-  return v.platform === "youtube"
-    ? `https://www.youtube.com/embed/${v.videoId}`
-    : `https://player.vimeo.com/video/${v.videoId}`;
-}
-
 function ClassCard({ v }: { v: ClassVideo }) {
   return (
     <div className="overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)]">
       <div className={v.format === "vertical" ? "mx-auto aspect-[9/16] max-w-[220px] bg-black" : "aspect-video bg-black"}>
-        <iframe
-          src={embedUrl(v)}
-          title={v.title}
-          className="h-full w-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        <ClassPlayer v={v} />
       </div>
       <div className="p-6">
         <div className="mb-3 flex flex-wrap gap-1.5">
@@ -62,6 +52,7 @@ export default function Classes() {
   const [level, setLevel] = useState("All");
   const [style, setStyle] = useState("All");
   const [duration, setDuration] = useState(durations[0]);
+  const gateSentinelRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     return allVideos.filter((v) => {
@@ -104,56 +95,64 @@ export default function Classes() {
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="bg-white px-5 pb-8 pt-14 sm:px-6">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="flex flex-wrap gap-3">
-            <select
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}
-              className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
-            >
-              <option value="All">All Levels</option>
-              {levels.slice(1).map((l) => (
-                <option key={l} value={l}>{l}</option>
-              ))}
-            </select>
-            <select
-              value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
-            >
-              <option value="All">All Styles</option>
-              {styles.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-            <select
-              value={duration.label}
-              onChange={(e) => setDuration(durations.find((d) => d.label === e.target.value)!)}
-              className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
-            >
-              {durations.map((d) => (
-                <option key={d.label} value={d.label}>{d.label}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-      </section>
+      <div ref={gateSentinelRef} aria-hidden="true" />
 
-      {/* Grid */}
-      <section className="bg-white px-5 pb-24 sm:px-6">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((v) => (
-              <ClassCard key={v.id} v={v} />
-            ))}
+      <SignInGate
+        sentinelRef={gateSentinelRef}
+        headline="Keep practicing with us"
+        copy="Create a free account to unlock the full class library."
+      >
+        {/* Filters */}
+        <section className="bg-white px-5 pb-8 pt-14 sm:px-6">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="flex flex-wrap gap-3">
+              <select
+                value={level}
+                onChange={(e) => setLevel(e.target.value)}
+                className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
+              >
+                <option value="All">All Levels</option>
+                {levels.slice(1).map((l) => (
+                  <option key={l} value={l}>{l}</option>
+                ))}
+              </select>
+              <select
+                value={style}
+                onChange={(e) => setStyle(e.target.value)}
+                className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
+              >
+                <option value="All">All Styles</option>
+                {styles.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+              <select
+                value={duration.label}
+                onChange={(e) => setDuration(durations.find((d) => d.label === e.target.value)!)}
+                className="rounded-full border border-[var(--color-line)] bg-transparent px-5 py-2.5 text-sm text-[var(--color-ink)]"
+              >
+                {durations.map((d) => (
+                  <option key={d.label} value={d.label}>{d.label}</option>
+                ))}
+              </select>
+            </div>
           </div>
-          {filtered.length === 0 && (
-            <p className="py-16 text-center text-[var(--color-ink-soft)]">No classes match those filters yet.</p>
-          )}
-        </div>
-      </section>
+        </section>
+
+        {/* Grid */}
+        <section className="bg-white px-5 pb-24 sm:px-6">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((v) => (
+                <ClassCard key={v.id} v={v} />
+              ))}
+            </div>
+            {filtered.length === 0 && (
+              <p className="py-16 text-center text-[var(--color-ink-soft)]">No classes match those filters yet.</p>
+            )}
+          </div>
+        </section>
+      </SignInGate>
     </PageShell>
   );
 }

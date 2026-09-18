@@ -1,7 +1,9 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED_PATHS = ["/mindshift", "/wellness", "/reminders"];
+// /mindshift is intentionally not here — signed-out visitors see it behind a client-side
+// scroll gate (<SignInGate>) instead of a server redirect, so it can preview then blur.
+const PROTECTED_PATHS = ["/wellness", "/reminders"];
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
