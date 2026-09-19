@@ -21,7 +21,13 @@ const styles = Array.from(new Set(allVideos.map((v) => v.style)));
 function ClassCard({ v }: { v: ClassVideo }) {
   return (
     <div className="overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)]">
-      <div className={v.format === "vertical" ? "mx-auto aspect-[9/16] max-w-[220px] bg-black" : "aspect-video bg-black"}>
+      <div
+        className={
+          v.format === "vertical"
+            ? "mx-auto aspect-[9/16] max-w-[220px] bg-[var(--color-dark-card)]"
+            : "aspect-video bg-[var(--color-dark-card)]"
+        }
+      >
         <ClassPlayer v={v} />
       </div>
       <div className="p-6">

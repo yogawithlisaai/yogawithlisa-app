@@ -14,7 +14,7 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
 
   if (!v.available) {
     return (
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-black">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]">
         <img
           src={posterUrl(v)}
           alt=""
@@ -66,7 +66,7 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
       onClick={handlePlay}
       disabled={status === "loading"}
       aria-label={`Play ${v.title}`}
-      className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-black"
+      className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]"
     >
       <img
         src={posterUrl(v)}
