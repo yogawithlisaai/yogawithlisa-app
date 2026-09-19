@@ -29,7 +29,11 @@ export async function getSignedVideoUrl(key: string): Promise<string> {
   return getSignedUrl(getClient(), command, { expiresIn: SIGNED_URL_TTL_SECONDS });
 }
 
-/** Free classes are served straight from the public bucket, no signing needed. */
-export function getPublicVideoUrl(key: string): string {
-  return `${process.env.NEXT_PUBLIC_R2_PUBLIC_BASE_URL}/${key}`;
+/**
+ * Free classes are served straight from the public bucket, no signing needed. Returns null
+ * when the base URL isn't configured yet, instead of a URL with a literal "undefined" in it.
+ */
+export function getPublicVideoUrl(key: string): string | null {
+  const base = process.env.NEXT_PUBLIC_R2_PUBLIC_BASE_URL;
+  return base ? `${base}/${key}` : null;
 }

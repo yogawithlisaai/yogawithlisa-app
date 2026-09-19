@@ -15,6 +15,8 @@ export type ClassVideo = {
   format: "vertical" | "horizontal";
   free: boolean;
   featured: boolean;
+  /** False until the video file is actually uploaded to R2 — card shows "Coming soon" instead. */
+  available: boolean;
 };
 
 export type ClassCategory = { category: string; videos: ClassVideo[] };

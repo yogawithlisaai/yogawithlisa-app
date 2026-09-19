@@ -11,10 +11,16 @@
         "durationMinutes": 8,
         "level": "Beginner",
         "style": "Gentle Flow",
-        "tags": ["free", "morning", "grounding", "calm"],
+        "tags": [
+          "free",
+          "morning",
+          "grounding",
+          "calm"
+        ],
         "format": "vertical",
         "free": true,
-        "featured": true
+        "featured": true,
+        "available": true
       },
       {
         "id": "free-2",
@@ -25,10 +31,15 @@
         "durationMinutes": 14,
         "level": "Beginner",
         "style": "Gentle Flow",
-        "tags": ["free", "morning", "mobility"],
+        "tags": [
+          "free",
+          "morning",
+          "mobility"
+        ],
         "format": "vertical",
         "free": true,
-        "featured": true
+        "featured": true,
+        "available": true
       },
       {
         "id": "free-3",
@@ -39,10 +50,15 @@
         "durationMinutes": 15,
         "level": "Beginner",
         "style": "Gentle Flow",
-        "tags": ["free", "morning", "balance"],
+        "tags": [
+          "free",
+          "morning",
+          "balance"
+        ],
         "format": "vertical",
         "free": true,
-        "featured": true
+        "featured": true,
+        "available": false
       }
     ]
   },
@@ -58,10 +74,15 @@
         "durationMinutes": 5,
         "level": "All Levels",
         "style": "Chair Yoga",
-        "tags": ["quick", "desk", "stress-relief"],
+        "tags": [
+          "quick",
+          "desk",
+          "stress-relief"
+        ],
         "format": "horizontal",
         "free": true,
-        "featured": false
+        "featured": false,
+        "available": false
       },
       {
         "id": "reset-2",
@@ -72,10 +93,15 @@
         "durationMinutes": 10,
         "level": "All Levels",
         "style": "Restorative",
-        "tags": ["anxious", "calm", "breathwork"],
+        "tags": [
+          "anxious",
+          "calm",
+          "breathwork"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       }
     ]
   },
@@ -91,10 +117,15 @@
         "durationMinutes": 30,
         "level": "Intermediate",
         "style": "Vinyasa",
-        "tags": ["energized", "strength", "flow"],
+        "tags": [
+          "energized",
+          "strength",
+          "flow"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       },
       {
         "id": "vin-2",
@@ -105,10 +136,15 @@
         "durationMinutes": 45,
         "level": "Advanced",
         "style": "Power",
-        "tags": ["strength", "sweat", "challenge"],
+        "tags": [
+          "strength",
+          "sweat",
+          "challenge"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       },
       {
         "id": "vin-3",
@@ -119,10 +155,15 @@
         "durationMinutes": 25,
         "level": "Intermediate",
         "style": "Vinyasa",
-        "tags": ["joyful", "transition", "evening"],
+        "tags": [
+          "joyful",
+          "transition",
+          "evening"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       }
     ]
   },
@@ -138,10 +179,15 @@
         "durationMinutes": 40,
         "level": "All Levels",
         "style": "Yin",
-        "tags": ["tired", "release", "props"],
+        "tags": [
+          "tired",
+          "release",
+          "props"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       },
       {
         "id": "yin-2",
@@ -152,10 +198,15 @@
         "durationMinutes": 35,
         "level": "Beginner",
         "style": "Restorative",
-        "tags": ["sleep", "calm", "evening"],
+        "tags": [
+          "sleep",
+          "calm",
+          "evening"
+        ],
         "format": "horizontal",
         "free": true,
-        "featured": false
+        "featured": false,
+        "available": false
       }
     ]
   },
@@ -171,10 +222,15 @@
         "durationMinutes": 30,
         "level": "Beginner",
         "style": "Hatha",
-        "tags": ["beginner", "alignment", "foundations"],
+        "tags": [
+          "beginner",
+          "alignment",
+          "foundations"
+        ],
         "format": "horizontal",
         "free": true,
-        "featured": false
+        "featured": false,
+        "available": false
       },
       {
         "id": "hatha-2",
@@ -185,10 +241,14 @@
         "durationMinutes": 35,
         "level": "Intermediate",
         "style": "Hatha",
-        "tags": ["strength", "focus"],
+        "tags": [
+          "strength",
+          "focus"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       }
     ]
   },
@@ -204,10 +264,15 @@
         "durationMinutes": 25,
         "level": "All Levels",
         "style": "Prenatal",
-        "tags": ["pregnancy", "gentle", "supportive"],
+        "tags": [
+          "pregnancy",
+          "gentle",
+          "supportive"
+        ],
         "format": "horizontal",
         "free": false,
-        "featured": false
+        "featured": false,
+        "available": false
       }
     ]
   }

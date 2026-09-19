@@ -12,6 +12,24 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
   const [src, setSrc] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
+  if (!v.available) {
+    return (
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]">
+        <img
+          src={posterUrl(v)}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
+        <span className="relative z-10 rounded-full bg-white/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--color-ink)]">
+          Coming soon
+        </span>
+      </div>
+    );
+  }
+
   async function handlePlay() {
     if (src || status === "loading") return;
     setStatus("loading");
@@ -48,7 +66,7 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
       onClick={handlePlay}
       disabled={status === "loading"}
       aria-label={`Play ${v.title}`}
-      className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-black"
+      className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]"
     >
       <img
         src={posterUrl(v)}

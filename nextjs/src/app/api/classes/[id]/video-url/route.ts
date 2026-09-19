@@ -10,7 +10,11 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
   }
 
   if (video.free) {
-    return NextResponse.json({ url: getPublicVideoUrl(video.videoKey) });
+    const url = getPublicVideoUrl(video.videoKey);
+    if (!url) {
+      return NextResponse.json({ error: "Video not available yet" }, { status: 503 });
+    }
+    return NextResponse.json({ url });
   }
 
   const user = await getUser();

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
+import { wellnessTrackerEnabled } from "@/lib/feature-flags";
 
 export default function Home() {
   return (
@@ -95,7 +96,9 @@ export default function Home() {
               { href: "/classes", title: "Classes", desc: "On-demand video library by duration, level, and style." },
               { href: "/recipes", title: "Recipes", desc: "Filterable vegan & gluten-free recipes with real photos." },
               { href: "/mindshift", title: "MindShift", desc: "Log your practice, track streaks, get recommendations." },
-              { href: "/wellness", title: "Wellness", desc: "Mood, energy, sleep & cycle tracking with tailored suggestions." },
+              ...(wellnessTrackerEnabled
+                ? [{ href: "/wellness", title: "Wellness", desc: "Mood, energy, sleep & cycle tracking with tailored suggestions." }]
+                : []),
             ].map((f) => (
               <Link
                 key={f.href}
