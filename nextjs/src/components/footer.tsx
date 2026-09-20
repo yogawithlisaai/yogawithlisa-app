@@ -1,7 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { wellnessTrackerEnabled } from "@/lib/feature-flags";
+import { useSession } from "@/lib/use-session";
 
 export function Footer() {
+  const { session, supabase } = useSession();
+
+  async function handleSignOut() {
+    await supabase.auth.signOut();
+    window.location.href = "/";
+  }
+
   return (
     <footer className="bg-[var(--color-dark)] text-white">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-5 py-16 sm:px-6 md:flex-row md:justify-between">
@@ -29,8 +39,14 @@ export function Footer() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/35">Connect</p>
             <ul className="space-y-3 text-sm text-white/65">
               <li><Link href="/book" className="hover:text-white">Book with Lisa</Link></li>
-              <li><Link href="/reminders" className="hover:text-white">Reminders</Link></li>
               <li><a href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noreferrer" className="hover:text-white">Discovery Call</a></li>
+              {session && (
+                <li>
+                  <button onClick={handleSignOut} className="hover:text-white">
+                    Sign out
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>
