@@ -123,7 +123,7 @@ export default function Home() {
                 <>
                   <h3 className="font-serif text-2xl text-white">{f.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/60">{f.desc}</p>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white/70 opacity-0 transition-opacity group-hover:opacity-100">
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white/70 opacity-0 transition-opacity group-hover:opacity-100 [@media(hover:none)]:opacity-100">
                     Explore →
                   </p>
                 </>
