@@ -107,22 +107,37 @@ export default function Home() {
               { href: "/classes", title: "Classes", desc: "On-demand video library by duration, level, and style." },
               { href: "/recipes", title: "Recipes", desc: "Filterable vegan & gluten-free recipes with real photos." },
               { href: "/mindshift", title: "MindShift", desc: "Log your practice, track streaks, get recommendations." },
+              {
+                href: "https://aetherayoga.com/bali.html",
+                title: "Retreats",
+                desc: "A week-long retreat in Bali for deep practice, rest, and connection.",
+                external: true,
+              },
               ...(wellnessTrackerEnabled
                 ? [{ href: "/wellness", title: "Wellness", desc: "Mood, energy, sleep & cycle tracking with tailored suggestions." }]
                 : []),
-            ].map((f) => (
-              <Link
-                key={f.href}
-                href={f.href}
-                className="group rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)] p-8 transition-colors hover:bg-[#2c2c2c]"
-              >
-                <h3 className="font-serif text-2xl text-white">{f.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{f.desc}</p>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white/70 opacity-0 transition-opacity group-hover:opacity-100">
-                  Explore →
-                </p>
-              </Link>
-            ))}
+            ].map((f) => {
+              const cardClassName =
+                "group rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)] p-8 transition-colors hover:bg-[#2c2c2c]";
+              const content = (
+                <>
+                  <h3 className="font-serif text-2xl text-white">{f.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">{f.desc}</p>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white/70 opacity-0 transition-opacity group-hover:opacity-100 [@media(hover:none)]:opacity-100">
+                    Explore →
+                  </p>
+                </>
+              );
+              return "external" in f && f.external ? (
+                <a key={f.href} href={f.href} target="_blank" rel="noopener noreferrer" className={cardClassName}>
+                  {content}
+                </a>
+              ) : (
+                <Link key={f.href} href={f.href} className={cardClassName}>
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
