@@ -71,16 +71,27 @@ export default function Home() {
               A practice built on <em className="italic">presence</em>, not perfection.
             </h2>
             <p className="mt-5 max-w-md text-[var(--color-ink-soft)]">
-              Lisa is a Berkeley-based yoga instructor who believes movement should meet you where
-              you are, no rigid shapes, no unattainable poses. Every class, recipe, and check-in
-              here is built around one idea: find stillness first, strength follows.
+              Lisa is a Berkeley-based, 500-hour Yoga Alliance certified instructor who believes
+              movement should meet you where you are, no rigid shapes, no unattainable poses.
+              Every class, recipe, and check-in here is built around one idea: find stillness
+              first, strength follows.
             </p>
-            <Link
-              href="/book"
-              className="mt-8 inline-block rounded-full bg-[var(--color-ink)] px-7 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition-opacity hover:opacity-85"
-            >
-              Work with Lisa
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <Link
+                href="/book"
+                className="inline-block rounded-full bg-[var(--color-ink)] px-7 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition-opacity hover:opacity-85"
+              >
+                Work with Lisa
+              </Link>
+              <a
+                href="https://www.yogawithlisa.ai/about-lisa-eshun-wilson.html"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-semibold uppercase tracking-widest text-[var(--color-ink)] hover:underline"
+              >
+                Read Lisa&rsquo;s full story
+              </a>
+            </div>
           </div>
         </div>
       </section>
