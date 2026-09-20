@@ -71,9 +71,10 @@ export default function Home() {
               A practice built on <em className="italic">presence</em>, not perfection.
             </h2>
             <p className="mt-5 max-w-md text-[var(--color-ink-soft)]">
-              Lisa is a Berkeley-based yoga instructor who believes movement should meet you where
-              you are, no rigid shapes, no unattainable poses. Every class, recipe, and check-in
-              here is built around one idea: find stillness first, strength follows.
+              Lisa is a Berkeley-based, 500-hour Yoga Alliance certified instructor who believes
+              movement should meet you where you are, no rigid shapes, no unattainable poses.
+              Every class, recipe, and check-in here is built around one idea: find stillness
+              first, strength follows.
             </p>
             <Link
               href="/book"
