@@ -3,7 +3,7 @@ import { z } from "zod";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { computeStreaks } from "./streaks";
 import { classCatalog } from "@/lib/classes";
-import { isoDate, mapPracticeLog, mapCheckin } from "@/lib/rows";
+import { isoDate, mapPracticeLog } from "@/lib/rows";
 
 /**
  * MindShift's three agent tools, bound to the authenticated user's Supabase
@@ -47,7 +47,7 @@ export function buildMindShiftTools(supabase: SupabaseClient, userId: string) {
 
   const getRecentActivity = tool({
     description:
-      "Get the user's recent practice logs, current streak, and recent wellness check-ins so you can give personalized recommendations based on mood, energy, and recent activity.",
+      "Get the user's recent practice logs and current streak so you can give personalized recommendations based on recent activity. Does not include Wellness Dashboard check-ins — that data is a separate feature and is never sent to the model.",
     inputSchema: z.object({}),
     async execute() {
       const { data: logs } = await supabase
@@ -58,18 +58,8 @@ export function buildMindShiftTools(supabase: SupabaseClient, userId: string) {
         .limit(14);
       const streaks = computeStreaks((logs ?? []).map((l) => l.date));
 
-      // Cross-feature context from the Wellness Dashboard (the old app injected
-      // this via a deps hook; here we read the checkins table directly).
-      const { data: checkins } = await supabase
-        .from("checkins")
-        .select("date, mood, energy, sleep_rating, cycle_phase")
-        .eq("user_id", userId)
-        .order("date", { ascending: false })
-        .limit(7);
-
       return {
         logs: (logs ?? []).map(mapPracticeLog),
-        wellnessSignals: (checkins ?? []).map(mapCheckin),
         streaks,
       };
     },
