@@ -1,0 +1,36 @@
+/*
+ * MindShift brand guide (Appendix A), scoped to this route only. CSS Modules hash this class
+ * name, so these custom properties and the heading-font override can never collide with or leak
+ * into the rest of the app's global tokens/typography (src/app/globals.css, which every other
+ * route still uses untouched).
+ */
+.scope {
+  --linen: #f7f1ea;
+  --cream: #f1e8df;
+  --espresso: #281d12;
+  --teal: #253f3f;
+  --clay: #956a4e;
+  --clay-ink: #7a5640;
+  --rose: #cda6a2;
+  --sand: #ae8b6b;
+  --muted: #6e5e50;
+  --hairline: #e3d7ca;
+
+  background-color: var(--linen);
+  color: var(--espresso);
+}
+
+.scope h1,
+.scope h2,
+.scope h3,
+.scope h4 {
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-weight: 500;
+}
+
+/* Large numeric "stat" values (Appendix A.5) aren't semantic headings but use the same display
+   serif — applied explicitly since the h1–h4 rule above only covers heading elements. */
+.display {
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-weight: 500;
+}
