@@ -4,6 +4,9 @@
  * works end-to-end before real credentials are added.
  */
 
+// TODO: rename "Yoga with Lisa" to "Yoga with Lisa Rose" below next time the
+// privacy policy is revised (reminders are gated behind
+// NEXT_PUBLIC_REMINDERS_ENABLED, currently off, so nothing sends this today).
 const REMINDER_MESSAGES = [
   "🌿 Time to check in with yourself. Log today's practice or how you're feeling in Yoga with Lisa.",
   "✨ A few mindful minutes await. Open MindShift to log your practice or do a quick check-in.",
