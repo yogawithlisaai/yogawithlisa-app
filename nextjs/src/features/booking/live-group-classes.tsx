@@ -3,12 +3,12 @@
 import { useRef, useState } from "react";
 
 /**
- * The "Find a Class" panel on /book. Schedule is hand-maintained below —
- * update ROWS (and the Green Yogi standing block further down) directly
- * when Lisa's schedule changes. The signup modal (Formspree) is kept for
- * any future class that needs an in-house RSVP; nothing currently uses it,
- * since every row below links out to the studio's own booking flow or is
- * a restricted-audience session with no signup link at all.
+ * The "Find a Class" panel on /book. Schedule is hand-maintained in ROWS
+ * below — update it directly when Lisa's schedule changes. The signup
+ * modal (Formspree) is kept for any future class that needs an in-house
+ * RSVP; nothing currently uses it, since every row below links out to the
+ * studio's own booking flow or is a restricted-audience session with no
+ * signup link at all.
  */
 
 type ClassRow = {
@@ -36,12 +36,23 @@ const ROWS: ClassRow[] = [
   { id: "sb-dec10", date: "Thursday, December 10th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
   { id: "sb-dec17", date: "Thursday, December 17th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
 
-  // First-Saturday donation-based pop-up. Nov 7 skipped (traveling).
+  // First-Saturday donation-based pop-up. Nov 7 skipped.
   { id: "tantara-dec5", date: "Saturday, December 5th", time: "10:30 AM PT", duration: "1 hr", className: "Movement & Matcha", instructor: "Lisa", location: "Tantara SF, 914 Pacific Ave, San Francisco, CA 94133 (donation-based)", cta: { type: "link", href: "https://partiful.com/e/6U7Uw5wj8zEFg3BcEH2W?c=uajtumqh" } },
 
   // Grinnell College — hosted by SHAW, restricted audiences, no public signup link.
   { id: "grinnell-nov6", date: "Friday, November 6th", time: "4:15 PM CT", duration: "—", className: "Practice + Career Q&A", instructor: "Lisa", location: "Main 1st Lounge, Grinnell College, Grinnell, IA — hosted by SHAW", cta: { type: "text", label: "Grinnell students, open to all" } },
   { id: "grinnell-nov7", date: "Saturday, November 7th", time: "9:00 AM CT", duration: "—", className: "Practice", instructor: "Lisa", location: "Bear Multipurpose Dance Studio P103, Grinnell College, Grinnell, IA — hosted by SHAW", cta: { type: "text", label: "Grinnell Staff/Faculty, open to all" } },
+
+  // One-off substitute sessions at Green Yogi Telegraph, each individually
+  // confirmed by the studio — NOT a recurring weekly class. Do not extend
+  // this list by day-of-week; anything after Nov 2 is on the studio's own
+  // schedule (booking link below), not here.
+  { id: "gy-oct21", date: "Wednesday, October 21st", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "gy-oct22", date: "Thursday, October 22nd", time: "7:30 PM PT", duration: "50 min", className: "Restorative (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "gy-oct26", date: "Monday, October 26th", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "gy-oct28", date: "Wednesday, October 28th", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "gy-oct29", date: "Thursday, October 29th", time: "7:30 PM PT", duration: "50 min", className: "Restorative (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "gy-nov2", date: "Monday, November 2nd", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
 ];
 
 type ActiveClass = { name: string; date: string; time: string; location: string };
@@ -146,25 +157,6 @@ export function LiveGroupClasses() {
             ))}
           </tbody>
         </table>
-
-        <div className="mt-6 border-t border-[#ddd] pt-5 text-[0.9rem] text-[var(--color-ink-soft)]">
-          <p className="font-semibold text-[var(--color-ink)]">Also subbing at Green Yogi Telegraph</p>
-          <p className="mt-1">
-            Flow + Fit — Mondays &amp; Wednesdays, 12:00 PM PT · Restorative — Thursdays, 7:30 PM PT · Peacock Room
-          </p>
-          <p className="mt-1">
-            Confirmed week-to-week by the studio —{" "}
-            <a
-              href="https://www.mygreenyogi.com/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-[var(--color-ink)]"
-            >
-              see their MindBody schedule
-            </a>{" "}
-            for exact dates.
-          </p>
-        </div>
       </div>
 
       {activeClass && (
