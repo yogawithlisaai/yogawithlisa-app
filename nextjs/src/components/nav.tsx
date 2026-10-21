@@ -34,13 +34,13 @@ export function Nav({ overDark = false }: { overDark?: boolean }) {
       style={{ backgroundColor: dark ? "transparent" : "var(--color-taupe)" }}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-5 sm:px-6">
-        <Link
-          href="/"
+        <a
+          href="https://yogawithlisarose.com"
           className="font-serif text-2xl italic lowercase tracking-wide transition-colors sm:text-3xl"
           style={{ color: dark ? "var(--color-white)" : "var(--color-ink)" }}
         >
-          yoga with lisa
-        </Link>
+          yoga with lisa rose
+        </a>
 
         {session ? (
           <button
