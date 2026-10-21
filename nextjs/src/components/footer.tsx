@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="bg-[var(--color-dark)] text-white">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-5 py-16 sm:px-6 md:flex-row md:justify-between">
         <div className="max-w-sm">
-          <p className="font-serif text-2xl italic lowercase text-white">yoga with lisa</p>
+          <p className="font-serif text-2xl italic lowercase text-white">yoga with lisa rose</p>
           <p className="mt-4 text-sm leading-relaxed text-white/55">
             Helping you find <em className="italic">stillness</em> in a loud world, one grounded
             practice at a time.
@@ -26,7 +26,7 @@ export function Footer() {
               href="https://www.instagram.com/yogawithlisarose"
               target="_blank"
               rel="noreferrer"
-              aria-label="Yoga with Lisa on Instagram"
+              aria-label="Yoga with Lisa Rose on Instagram"
               className="text-white/55 hover:text-white"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -39,7 +39,7 @@ export function Footer() {
               href="https://www.youtube.com/@yogawithlisarose"
               target="_blank"
               rel="noreferrer"
-              aria-label="Yoga with Lisa on YouTube"
+              aria-label="Yoga with Lisa Rose on YouTube"
               className="text-white/55 hover:text-white"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">

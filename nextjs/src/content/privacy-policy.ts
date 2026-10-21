@@ -7,7 +7,7 @@
 export const privacyPolicyLastUpdated = "September 20, 2026";
 
 export const privacyPolicyIntro =
-  'This Privacy Policy describes how Yoga with Lisa by Lisa Eshun-Wilson & Associates, LLC ("Yoga with Lisa," "we," "us," or "our") collects, uses, and shares information about you.';
+  'This Privacy Policy describes how Yoga with Lisa Rose by Lisa Eshun-Wilson & Associates, LLC ("Yoga with Lisa Rose," "we," "us," or "our") collects, uses, and shares information about you.';
 
 interface Paragraph {
   type: "paragraph";
@@ -315,7 +315,7 @@ export const privacyPolicySections: PrivacyPolicySection[] = [
     heading: "Contact Us",
     blocks: [
       p("For any questions, or to request further information regarding this Policy, please contact us at:"),
-      p("Yoga with Lisa by Lisa Eshun-Wilson & Associates, LLC"),
+      p("Yoga with Lisa Rose by Lisa Eshun-Wilson & Associates, LLC"),
       p("Email: contact@yogawithlisa.ai"),
       p("Website: yogawithlisa.ai"),
     ],

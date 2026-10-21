@@ -212,7 +212,7 @@ export function LiveGroupClasses() {
     data.class_time = activeClass.time;
     data.class_location = activeClass.location;
     data._replyto = data.email;
-    data._subject = "New Class Signup - Yoga with Lisa";
+    data._subject = "New Class Signup - Yoga with Lisa Rose";
 
     try {
       const res = await fetch(FORMSPREE_URL, {
@@ -371,7 +371,7 @@ export function LiveGroupClasses() {
                 </div>
 
                 <p className="text-xs leading-relaxed text-[var(--color-ink-soft)]">
-                  I understand that yoga involves physical activity and I participate at my own risk. I release Yoga with Lisa, Lisa Eshun-Wilson, and their associates from any liability for injury or damages.
+                  I understand that yoga involves physical activity and I participate at my own risk. I release Yoga with Lisa Rose, Lisa Eshun-Wilson, and their associates from any liability for injury or damages.
                 </p>
 
                 <label className="flex items-start gap-2 text-sm text-[var(--color-ink-soft)]">
@@ -384,7 +384,7 @@ export function LiveGroupClasses() {
                 </label>
                 <label className="flex items-start gap-2 text-sm text-[var(--color-ink-soft)]">
                   <input type="checkbox" name="consent_media" className="mt-1 h-4 w-4 accent-[var(--color-ink)]" />
-                  I consent to being photographed or filmed during class for use on the Yoga with Lisa website
+                  I consent to being photographed or filmed during class for use on the Yoga with Lisa Rose website
                 </label>
 
                 <button

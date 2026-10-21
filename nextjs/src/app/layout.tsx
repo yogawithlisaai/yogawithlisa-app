@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ??
       (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
   ),
-  title: "Yoga with Lisa",
+  title: "Yoga with Lisa Rose",
   description:
     "On-demand classes, recipes, an AI practice tracker, and wellness check-ins with Lisa.",
   openGraph: { images: ["/og-image.png"] },

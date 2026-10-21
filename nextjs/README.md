@@ -1,6 +1,6 @@
-# Yoga with Lisa — Next.js + Supabase
+# Yoga with Lisa Rose — Next.js + Supabase
 
-The Yoga with Lisa wellness app rebuilt on **Next.js 14 (App Router) + Supabase + Tailwind CSS**,
+The Yoga with Lisa Rose wellness app rebuilt on **Next.js 14 (App Router) + Supabase + Tailwind CSS**,
 deployable to **Vercel**. A 1:1 functional port of the original Bun + Vite + Hono + SQLite app
 (which still lives in `../packages/web`):
 
