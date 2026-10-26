@@ -16,11 +16,38 @@ export function Footer() {
     <footer className="bg-[var(--color-dark)] text-white">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-5 py-16 sm:px-6 md:flex-row md:justify-between">
         <div className="max-w-sm">
-          <p className="font-serif text-2xl italic lowercase text-white">yoga with lisa</p>
+          <p className="font-serif text-2xl italic lowercase text-white">yoga with lisa rose</p>
           <p className="mt-4 text-sm leading-relaxed text-white/55">
             Helping you find <em className="italic">stillness</em> in a loud world, one grounded
             practice at a time.
           </p>
+          <div className="mt-5 flex gap-4">
+            <a
+              href="https://www.instagram.com/yogawithlisarose"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Yoga with Lisa Rose on Instagram"
+              className="text-white/55 hover:text-white"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@yogawithlisarose"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Yoga with Lisa Rose on YouTube"
+              className="text-white/55 hover:text-white"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M10.5 9.5 15 12l-4.5 2.5v-5Z" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">

@@ -9,8 +9,8 @@ import {
 } from "@/content/privacy-policy";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Yoga with Lisa",
-  description: "How Yoga with Lisa collects, uses, and protects your information.",
+  title: "Privacy Policy | Yoga with Lisa Rose",
+  description: "How Yoga with Lisa Rose collects, uses, and protects your information.",
   alternates: {
     // The marketing site's copy is the canonical version of this policy.
     canonical: "https://www.yogawithlisa.ai/privacy.html",

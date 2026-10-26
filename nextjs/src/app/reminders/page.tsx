@@ -77,7 +77,7 @@ export default function Reminders() {
             />
             <span className="text-sm text-[var(--color-ink-soft)]">
               <span className="font-semibold text-[var(--color-ink)]">Yes, text me daily reminders.</span>{" "}
-              I agree to receive automated SMS messages from Yoga with Lisa at the number below.
+              I agree to receive automated SMS messages from Yoga with Lisa Rose at the number below.
               Message &amp; data rates may apply. Reply STOP at any time to opt out.
             </span>
           </label>
