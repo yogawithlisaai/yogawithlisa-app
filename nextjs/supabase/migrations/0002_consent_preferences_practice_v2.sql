@@ -92,7 +92,7 @@ update public.practice_logs set moods = coalesce((
       when 'overwhelmed' then 'Overwhelmed'
       else null
     end as canon
-    from unnest(string_to_array(lower(mood), ',')) with ordinal as t(word, ord)
+    from unnest(string_to_array(lower(mood), ',')) with ordinality as t(word, ord)
   ) mapped
   where canon is not null
 ), '{}'::text[])
