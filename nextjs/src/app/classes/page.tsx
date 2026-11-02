@@ -20,7 +20,10 @@ const styles = Array.from(new Set(allVideos.map((v) => v.style)));
 
 function ClassCard({ v }: { v: ClassVideo }) {
   return (
-    <div className="overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)]">
+    <div
+      id={v.id}
+      className="scroll-mt-24 overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)]"
+    >
       <div
         className={
           v.format === "vertical"
