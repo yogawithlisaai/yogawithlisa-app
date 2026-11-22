@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { isActiveMember } from "@/lib/membership";
 
 export async function DELETE(
   _req: Request,
@@ -9,6 +10,9 @@ export async function DELETE(
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
+  if (!(await isActiveMember(supabase, user.id))) {
+    return Response.json({ message: "Membership required" }, { status: 403 });
+  }
 
   const { error } = await supabase
     .from("practice_logs")

@@ -1,13 +1,13 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { PageShell } from "@/components/page-shell";
 import { SignInGate } from "@/components/sign-in-gate";
+import { MembershipSection } from "@/components/membership-section";
 import { ClassPlayer } from "@/components/class-player";
-import { classCatalog, type ClassVideo } from "@/lib/classes";
-
-const allVideos = classCatalog;
-const featured = allVideos.filter((v) => v.featured);
+import { useMembership } from "@/lib/use-membership";
+import type { PublicClassVideo } from "@/lib/classes-client";
 
 const levels = ["All Levels", "Beginner", "Intermediate", "Advanced"];
 const durations = [
@@ -16,9 +16,12 @@ const durations = [
   { label: "15-30 min", max: 30 },
   { label: "30+ min", max: Infinity, min: 30 },
 ] as { label: string; max: number; min?: number }[];
-const styles = Array.from(new Set(allVideos.map((v) => v.style)));
 
-function ClassCard({ v }: { v: ClassVideo }) {
+function scrollToMembership() {
+  document.getElementById("membership")?.scrollIntoView({ behavior: "smooth" });
+}
+
+function ClassCard({ v }: { v: PublicClassVideo }) {
   return (
     <div
       id={v.id}
@@ -31,7 +34,7 @@ function ClassCard({ v }: { v: ClassVideo }) {
             : "aspect-video bg-[var(--color-dark-card)]"
         }
       >
-        <ClassPlayer v={v} />
+        <ClassPlayer v={v} onLocked={scrollToMembership} />
       </div>
       <div className="p-6">
         <div className="mb-3 flex flex-wrap gap-1.5">
@@ -44,7 +47,7 @@ function ClassCard({ v }: { v: ClassVideo }) {
           <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/70">
             {v.style}
           </span>
-          {v.free && (
+          {v.isFree && (
             <span className="rounded-full bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[var(--color-ink)]">
               Free
             </span>
@@ -62,6 +65,15 @@ export default function Classes() {
   const [style, setStyle] = useState("All");
   const [duration, setDuration] = useState(durations[0]);
   const gateSentinelRef = useRef<HTMLDivElement>(null);
+  const { isMember } = useMembership();
+
+  const { data } = useQuery({
+    queryKey: ["classes"],
+    queryFn: async () => (await fetch("/api/classes")).json() as Promise<{ classes: PublicClassVideo[] }>,
+  });
+  const allVideos = data?.classes ?? [];
+  const featured = allVideos.filter((v) => v.featured);
+  const styles = Array.from(new Set(allVideos.map((v) => v.style).filter(Boolean)));
 
   const filtered = useMemo(() => {
     return allVideos.filter((v) => {
@@ -71,7 +83,7 @@ export default function Classes() {
       if (!duration.min && v.durationMinutes > duration.max) return false;
       return true;
     });
-  }, [level, style, duration]);
+  }, [allVideos, level, style, duration]);
 
   return (
     <PageShell>
@@ -161,6 +173,8 @@ export default function Classes() {
             )}
           </div>
         </section>
+
+        {!isMember && <MembershipSection />}
       </SignInGate>
     </PageShell>
   );

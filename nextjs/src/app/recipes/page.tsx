@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { PageShell } from "@/components/page-shell";
-import recipesData from "@/data/recipes.json";
+import { MembershipSection } from "@/components/membership-section";
 
 type Recipe = {
   id: string;
@@ -10,24 +11,41 @@ type Recipe = {
   photo: string;
   tags: string[];
   description: string;
-  ingredients: string[];
-  steps: string[];
+  ingredients?: string[];
+  steps?: string[];
 };
 
-const recipes = recipesData as Recipe[];
-const allTags = Array.from(new Set(recipes.flatMap((r) => r.tags))).sort();
+function scrollToMembership() {
+  document.getElementById("membership")?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Recipes() {
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [open, setOpen] = useState<Recipe | null>(null);
 
+  const { data } = useQuery({
+    queryKey: ["recipes"],
+    queryFn: async () => (await fetch("/api/recipes")).json() as Promise<{ recipes: Recipe[]; isMember: boolean }>,
+  });
+  const recipes = data?.recipes ?? [];
+  const isMember = data?.isMember ?? false;
+  const allTags = Array.from(new Set(recipes.flatMap((r) => r.tags))).sort();
+
   const filtered = useMemo(() => {
     if (activeTags.length === 0) return recipes;
     return recipes.filter((r) => activeTags.every((t) => r.tags.includes(t)));
-  }, [activeTags]);
+  }, [recipes, activeTags]);
 
   function toggleTag(tag: string) {
     setActiveTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
+  }
+
+  function handleOpen(r: Recipe) {
+    if (!isMember) {
+      scrollToMembership();
+      return;
+    }
+    setOpen(r);
   }
 
   return (
@@ -39,7 +57,8 @@ export default function Recipes() {
             Recipes from the <em className="italic">community</em>
           </h1>
           <p className="mt-4 max-w-xl text-[var(--color-ink-soft)]">
-            Simple, vegan and gluten-free recipes to fuel your practice. Filter by what matters to you.
+            Simple, vegan and gluten-free recipes to fuel your practice.{" "}
+            {isMember ? "Filter by what matters to you." : "Full ingredients and steps are a membership perk."}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2">
@@ -66,11 +85,16 @@ export default function Recipes() {
             {filtered.map((r) => (
               <button
                 key={r.id}
-                onClick={() => setOpen(r)}
-                className="group overflow-hidden rounded-[20px] bg-white text-left transition-transform hover:-translate-y-1"
+                onClick={() => handleOpen(r)}
+                className="group relative overflow-hidden rounded-[20px] bg-white text-left transition-transform hover:-translate-y-1"
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={r.photo} alt={r.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  {!isMember && (
+                    <span className="absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-white" aria-hidden="true">
+                      🔒
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="mb-3 flex flex-wrap gap-1.5">
@@ -91,6 +115,8 @@ export default function Recipes() {
           )}
         </div>
       </section>
+
+      {!isMember && <MembershipSection />}
 
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setOpen(null)}>
@@ -115,12 +141,12 @@ export default function Recipes() {
 
               <h3 className="mt-8 font-serif text-lg text-[var(--color-ink)]">Ingredients</h3>
               <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-[var(--color-ink-soft)]">
-                {open.ingredients.map((i, idx) => <li key={idx}>{i}</li>)}
+                {open.ingredients?.map((i, idx) => <li key={idx}>{i}</li>)}
               </ul>
 
               <h3 className="mt-8 font-serif text-lg text-[var(--color-ink)]">Steps</h3>
               <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-[var(--color-ink-soft)]">
-                {open.steps.map((s, idx) => <li key={idx}>{s}</li>)}
+                {open.steps?.map((s, idx) => <li key={idx}>{s}</li>)}
               </ol>
             </div>
           </div>

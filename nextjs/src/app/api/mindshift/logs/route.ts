@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { computeStreaks } from "@/lib/mindshift/streaks";
 import { isoDate, mapPracticeLog } from "@/lib/rows";
+import { isActiveMember } from "@/lib/membership";
 
 export async function GET() {
   const supabase = createClient();
@@ -8,6 +9,9 @@ export async function GET() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
+  if (!(await isActiveMember(supabase, user.id))) {
+    return Response.json({ message: "Membership required" }, { status: 403 });
+  }
 
   const { data, error } = await supabase
     .from("practice_logs")
@@ -28,6 +32,9 @@ export async function POST(req: Request) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
+  if (!(await isActiveMember(supabase, user.id))) {
+    return Response.json({ message: "Membership required" }, { status: 403 });
+  }
 
   const body = await req.json();
   const { data, error } = await supabase

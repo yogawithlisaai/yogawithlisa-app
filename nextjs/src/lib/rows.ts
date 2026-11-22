@@ -51,3 +51,37 @@ export function mapOptin(row: any) {
 export function isoDate(d: Date) {
   return d.toISOString().slice(0, 10);
 }
+
+/**
+ * Vertical/9:16 format and "featured" placement aren't DB columns (they're cosmetic) — derived
+ * from the title so the Grounded Mornings series keeps its current vertical, hero-section look.
+ */
+export function mapClass(row: any) {
+  const isGroundedMornings = typeof row.title === "string" && row.title.startsWith("Grounded Mornings");
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    description: row.description,
+    durationMinutes: row.length_minutes,
+    level: row.level,
+    style: row.style,
+    intensity: row.intensity,
+    bodyFocus: row.body_focus,
+    thumbnailKey: row.thumbnail_key,
+    tags: row.tags ?? [],
+    videoSource: row.video_source,
+    videoRef: row.video_ref,
+    isFree: row.is_free,
+    sortOrder: row.sort_order,
+    format: isGroundedMornings ? "vertical" : "horizontal",
+    featured: isGroundedMornings,
+    available: row.video_source !== "pending" && !!row.video_ref,
+  };
+}
+
+/** Safe for any client, signed in or not: never includes videoSource/videoRef. */
+export function mapPublicClass(row: any) {
+  const { videoSource: _videoSource, videoRef: _videoRef, ...safe } = mapClass(row);
+  return safe;
+}

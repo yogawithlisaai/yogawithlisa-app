@@ -2,7 +2,7 @@ import { tool } from "ai";
 import { z } from "zod";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { computeStreaks } from "./streaks";
-import { classCatalog } from "@/lib/classes";
+import { getClassCatalog } from "@/lib/classes";
 import { isoDate, mapPracticeLog } from "@/lib/rows";
 
 /**
@@ -75,7 +75,7 @@ export function buildMindShiftTools(supabase: SupabaseClient, userId: string) {
       mood: z.string().optional().describe("User's current mood, to match tags/description"),
     }),
     async execute({ style, level, maxDuration, mood }) {
-      let filtered = classCatalog;
+      let filtered = await getClassCatalog(supabase);
       if (style) filtered = filtered.filter((v) => v.style?.toLowerCase().includes(style.toLowerCase()));
       if (level) filtered = filtered.filter((v) => v.level === level);
       if (maxDuration) filtered = filtered.filter((v) => v.durationMinutes <= maxDuration);
@@ -84,10 +84,14 @@ export function buildMindShiftTools(supabase: SupabaseClient, userId: string) {
         filtered = filtered.filter(
           (v) =>
             v.description?.toLowerCase().includes(m) ||
-            v.tags?.some((t) => t.toLowerCase().includes(m)),
+            v.tags?.some((t: string) => t.toLowerCase().includes(m)),
         );
       }
-      return { matches: filtered.slice(0, 5) };
+      // Strip videoSource/videoRef — the client fetches playback access via /video-url, never
+      // from a tool result.
+      return {
+        matches: filtered.slice(0, 5).map(({ videoSource: _videoSource, videoRef: _videoRef, ...safe }) => safe),
+      };
     },
   });
 

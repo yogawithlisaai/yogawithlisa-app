@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { classCatalog } from "@/lib/classes";
 import { postJson } from "@/lib/fetch-json";
+import type { PublicClassVideo } from "@/lib/classes-client";
 
 const moods = ["Calm", "Energized", "Stressed", "Tired", "Anxious", "Joyful"];
 const cyclePhases = [
@@ -16,7 +16,7 @@ const cyclePhases = [
   { value: "menopause", label: "Menopause" },
 ];
 
-function recommendationFor(checkin: any) {
+function recommendationFor(checkin: any, classCatalog: PublicClassVideo[]) {
   const mood = checkin?.mood?.toLowerCase() ?? "";
   const energy = checkin?.energy ?? 3;
   const sleep = checkin?.sleepRating ?? 3;
@@ -48,6 +48,11 @@ export function WellnessDashboard() {
     queryKey: ["checkin-today"],
     queryFn: async () => (await fetch("/api/checkins/today")).json(),
   });
+  const { data: classesData } = useQuery({
+    queryKey: ["classes"],
+    queryFn: async () => (await fetch("/api/classes")).json() as Promise<{ classes: PublicClassVideo[] }>,
+  });
+  const classCatalog = classesData?.classes ?? [];
 
   const [mood, setMood] = useState("");
   const [energy, setEnergy] = useState(3);
@@ -80,7 +85,7 @@ export function WellnessDashboard() {
     },
   });
 
-  const rec = recommendationFor({ mood, energy, sleepRating, cyclePhase });
+  const rec = recommendationFor({ mood, energy, sleepRating, cyclePhase }, classCatalog);
 
   return (
     <>

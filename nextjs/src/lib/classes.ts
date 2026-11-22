@@ -1,36 +1,25 @@
-import classesData from "@/data/classes.json";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { mapClass, mapPublicClass } from "@/lib/rows";
 
-export type ClassVideo = {
-  id: string;
-  title: string;
-  description: string;
-  /** Object key of the source video inside the R2 bucket (private bucket, unless `free`). */
-  videoKey: string;
-  /** Object key of the poster/thumbnail image inside the public R2 bucket. */
-  posterKey: string;
-  durationMinutes: number;
-  level: string;
-  style: string;
-  tags: string[];
-  format: "vertical" | "horizontal";
-  free: boolean;
-  featured: boolean;
-  /** False until the video file is actually uploaded to R2 — card shows "Coming soon" instead. */
-  available: boolean;
-};
-
-export type ClassCategory = { category: string; videos: ClassVideo[] };
-
-export const classCategories = classesData as ClassCategory[];
-
-/** Flat catalog — the one integration point MindShift needs for recommendations. */
-export const classCatalog: ClassVideo[] = classCategories.flatMap((c) => c.videos);
-
-export function findClassById(id: string): ClassVideo | undefined {
-  return classCatalog.find((v) => v.id === id);
+/**
+ * Server-only — reads the real video_source/video_ref. Never import this from a "use client"
+ * file; the browser gets class data through /api/classes (metadata only) or the per-class
+ * /video-url route (gated), never this module directly.
+ */
+export async function getClassCatalog(supabase: SupabaseClient) {
+  const { data, error } = await supabase.from("classes").select().order("sort_order", { ascending: true });
+  if (error) throw error;
+  return (data ?? []).map(mapClass);
 }
 
-/** Poster images always live in the public bucket — safe to build the URL on the client. */
-export function posterUrl(v: ClassVideo): string {
-  return `${process.env.NEXT_PUBLIC_R2_PUBLIC_BASE_URL}/${v.posterKey}`;
+/** Safe to hand to any client — strips videoSource/videoRef. */
+export async function getPublicClassCatalog(supabase: SupabaseClient) {
+  const { data, error } = await supabase.from("classes").select().order("sort_order", { ascending: true });
+  if (error) throw error;
+  return (data ?? []).map(mapPublicClass);
+}
+
+export async function findClassById(supabase: SupabaseClient, id: string) {
+  const { data } = await supabase.from("classes").select().eq("id", id).maybeSingle();
+  return data ? mapClass(data) : undefined;
 }

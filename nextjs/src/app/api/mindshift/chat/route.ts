@@ -2,6 +2,7 @@ import { anthropic } from "@ai-sdk/anthropic";
 import { convertToModelMessages, stepCountIs, streamText } from "ai";
 import { createClient } from "@/lib/supabase/server";
 import { buildMindShiftTools } from "@/lib/mindshift/tools";
+import { isActiveMember } from "@/lib/membership";
 
 export const maxDuration = 60;
 
@@ -28,6 +29,9 @@ export async function POST(req: Request) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
+  if (!(await isActiveMember(supabase, user.id))) {
+    return Response.json({ message: "Membership required" }, { status: 403 });
+  }
 
   const { messages } = await req.json();
 

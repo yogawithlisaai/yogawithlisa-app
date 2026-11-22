@@ -3,15 +3,16 @@
 import { useRef } from "react";
 import { PageShell } from "@/components/page-shell";
 import { SignInGate } from "@/components/sign-in-gate";
+import { MembershipSection } from "@/components/membership-section";
 import { MindShiftDashboard } from "@/features/mindshift/mindshift-dashboard";
 import { MindShiftPlaceholder } from "@/features/mindshift/mindshift-placeholder";
-import { useSession } from "@/lib/use-session";
+import { useMembership } from "@/lib/use-membership";
 import { cormorant } from "@/features/mindshift/fonts";
 import styles from "@/features/mindshift/mindshift-brand.module.css";
 
 export default function MindShiftPage() {
   const gateSentinelRef = useRef<HTMLDivElement>(null);
-  const { session } = useSession();
+  const { session, isMember } = useMembership();
 
   return (
     <PageShell>
@@ -33,11 +34,12 @@ export default function MindShiftPage() {
             copy="Create a free account to log sessions and chat with your practice companion."
           >
             <div className="mt-12">
-              {session ? <MindShiftDashboard /> : <MindShiftPlaceholder />}
+              {session && isMember ? <MindShiftDashboard /> : !session ? <MindShiftPlaceholder /> : null}
             </div>
           </SignInGate>
         </div>
       </section>
+      {session && !isMember && <MembershipSection />}
     </PageShell>
   );
 }

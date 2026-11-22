@@ -1,22 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { posterUrl, type ClassVideo } from "@/lib/classes";
+import MuxPlayer from "@mux/mux-player-react";
+import { posterUrl, type PublicClassVideo } from "@/lib/classes-client";
+
+type VideoUrlResponse =
+  | { kind: "direct"; url: string }
+  | { kind: "youtube"; videoId: string }
+  | { kind: "mux"; playbackId: string; token: string };
 
 /**
- * Fetches a playable URL only when the visitor presses play, instead of on mount — the API
- * route decides then whether that's a public URL or a signed one, so no player ever holds a
- * private video's URL until this class is actually pressed play on.
+ * Fetches a playable URL/token only when the visitor presses play, instead of on mount — the API
+ * route decides then whether this class is free, a member, or neither, so no player ever holds a
+ * private video's URL/token until this class is actually pressed play on.
  */
-export function ClassPlayer({ v }: { v: ClassVideo }) {
-  const [src, setSrc] = useState<string | null>(null);
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+export function ClassPlayer({ v, onLocked }: { v: PublicClassVideo; onLocked?: () => void }) {
+  const [playback, setPlayback] = useState<VideoUrlResponse | null>(null);
+  const [status, setStatus] = useState<"idle" | "loading" | "error" | "locked">("idle");
 
   if (!v.available) {
     return (
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]">
         <img
-          src={posterUrl(v)}
+          src={posterUrl(v.thumbnailKey)}
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-40"
           onError={(e) => {
@@ -31,24 +37,53 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
   }
 
   async function handlePlay() {
-    if (src || status === "loading") return;
+    if (playback || status === "loading") return;
     setStatus("loading");
     try {
       const res = await fetch(`/api/classes/${v.id}/video-url`);
+      if (res.status === 401 || res.status === 403) {
+        setStatus("locked");
+        onLocked?.();
+        return;
+      }
       if (!res.ok) throw new Error("request failed");
-      const data = await res.json();
-      setSrc(data.url);
+      const data = (await res.json()) as VideoUrlResponse;
+      setPlayback(data);
       setStatus("idle");
     } catch {
       setStatus("error");
     }
   }
 
-  if (src) {
+  if (playback?.kind === "mux") {
+    return (
+      <MuxPlayer
+        playbackId={playback.playbackId}
+        tokens={{ playback: playback.token }}
+        poster={posterUrl(v.thumbnailKey)}
+        autoPlay
+        style={{ height: "100%", width: "100%" }}
+      />
+    );
+  }
+
+  if (playback?.kind === "youtube") {
+    return (
+      <iframe
+        src={`https://www.youtube.com/embed/${playback.videoId}?autoplay=1`}
+        title={v.title}
+        className="h-full w-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    );
+  }
+
+  if (playback?.kind === "direct") {
     return (
       <video
-        src={src}
-        poster={posterUrl(v)}
+        src={playback.url}
+        poster={posterUrl(v.thumbnailKey)}
         controls
         autoPlay
         playsInline
@@ -69,13 +104,18 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
       className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-[var(--color-dark-card)]"
     >
       <img
-        src={posterUrl(v)}
+        src={posterUrl(v.thumbnailKey)}
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-60"
         onError={(e) => {
           e.currentTarget.style.display = "none";
         }}
       />
+      {!v.isFree && (
+        <span className="absolute left-3 top-3 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-white" aria-hidden="true">
+          🔒
+        </span>
+      )}
       <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg">
         {status === "loading" ? (
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--color-ink)] border-t-transparent" />
@@ -88,6 +128,11 @@ export function ClassPlayer({ v }: { v: ClassVideo }) {
       {status === "error" && (
         <span className="absolute inset-x-3 bottom-3 z-10 text-center text-xs text-white">
           Could not load this video. Please try again.
+        </span>
+      )}
+      {status === "locked" && (
+        <span className="absolute inset-x-3 bottom-3 z-10 text-center text-xs text-white">
+          Members only — join below to unlock this class.
         </span>
       )}
     </button>
