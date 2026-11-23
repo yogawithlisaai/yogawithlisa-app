@@ -4,16 +4,20 @@ import { useRef, useState } from "react";
 
 /**
  * The "Find a Class" panel on /book. Schedule is hand-maintained in ROWS
- * below — update it directly when Lisa's schedule changes. The signup
- * modal (Formspree) is kept for any future class that needs an in-house
- * RSVP; nothing currently uses it, since every row below links out to the
- * studio's own booking flow or is a restricted-audience session with no
- * signup link at all.
+ * below — update it directly when Lisa's schedule changes. Each row needs
+ * a `dateISO` ("YYYY-MM-DD") alongside the human-readable `date` string;
+ * rows are auto-sorted soonest-first by dateISO and anything already past
+ * is dropped automatically, so there's no need to keep ROWS in date order
+ * or prune old rows by hand. The signup modal (Formspree) is kept for any
+ * future class that needs an in-house RSVP; nothing currently uses it,
+ * since every row below links out to the studio's own booking flow or is
+ * a restricted-audience session with no signup link at all.
  */
 
 type ClassRow = {
   id: string;
   date: string;
+  dateISO: string;
   time: string;
   duration: string;
   className: string;
@@ -25,35 +29,21 @@ type ClassRow = {
 const SPORTS_BASEMENT_URL =
   "https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44";
 
-// Updated 2026-10-20. Sports Basement dates skip Nov 5 (traveling), Nov 26
+// Updated 2026-11-23. Sports Basement dates skip Nov 5 (traveling), Nov 26
 // (Thanksgiving), Dec 24 and Dec 31 (holidays).
 const ROWS: ClassRow[] = [
-  { id: "sb-oct22", date: "Thursday, October 22nd", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-oct29", date: "Thursday, October 29th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-nov12", date: "Thursday, November 12th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-nov19", date: "Thursday, November 19th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-dec3", date: "Thursday, December 3rd", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-dec10", date: "Thursday, December 10th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
-  { id: "sb-dec17", date: "Thursday, December 17th", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
+  { id: "sb-dec3", date: "Thursday, December 3rd", dateISO: "2026-12-03", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
+  { id: "sb-dec10", date: "Thursday, December 10th", dateISO: "2026-12-10", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
+  { id: "sb-dec17", date: "Thursday, December 17th", dateISO: "2026-12-17", time: "5:00 PM PT", duration: "60 min", className: "Vinyasa Flow", instructor: "Lisa", location: "Sports Basement Berkeley", cta: { type: "link", href: SPORTS_BASEMENT_URL } },
 
   // First-Saturday donation-based pop-up. Nov 7 skipped.
-  { id: "tantara-dec5", date: "Saturday, December 5th", time: "10:30 AM PT", duration: "1 hr", className: "Movement & Matcha", instructor: "Lisa", location: "Tantara SF, 914 Pacific Ave, San Francisco, CA 94133 (donation-based)", cta: { type: "link", href: "https://partiful.com/e/6U7Uw5wj8zEFg3BcEH2W?c=uajtumqh" } },
-
-  // Grinnell College — hosted by SHAW, restricted audiences, no public signup link.
-  { id: "grinnell-nov6", date: "Friday, November 6th", time: "4:15 PM CT", duration: "—", className: "Practice + Career Q&A", instructor: "Lisa", location: "Main 1st Lounge, Grinnell College, Grinnell, IA — hosted by SHAW", cta: { type: "text", label: "Grinnell students, open to all" } },
-  { id: "grinnell-nov7", date: "Saturday, November 7th", time: "9:00 AM CT", duration: "—", className: "Practice", instructor: "Lisa", location: "Bear Multipurpose Dance Studio P103, Grinnell College, Grinnell, IA — hosted by SHAW", cta: { type: "text", label: "Grinnell Staff/Faculty, open to all" } },
-
-  // One-off substitute sessions at Green Yogi Telegraph, each individually
-  // confirmed by the studio — NOT a recurring weekly class. Do not extend
-  // this list by day-of-week; anything after Nov 2 is on the studio's own
-  // schedule (booking link below), not here.
-  { id: "gy-oct21", date: "Wednesday, October 21st", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
-  { id: "gy-oct22", date: "Thursday, October 22nd", time: "7:30 PM PT", duration: "50 min", className: "Restorative (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
-  { id: "gy-oct26", date: "Monday, October 26th", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
-  { id: "gy-oct28", date: "Wednesday, October 28th", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
-  { id: "gy-oct29", date: "Thursday, October 29th", time: "7:30 PM PT", duration: "50 min", className: "Restorative (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
-  { id: "gy-nov2", date: "Monday, November 2nd", time: "12:00 PM PT", duration: "60 min", className: "Flow + Fit (sub)", instructor: "Lisa", location: "Green Yogi Telegraph, 2807 Telegraph Ave, Berkeley, CA 94705 — Peacock Room", cta: { type: "link", href: "https://www.mygreenyogi.com/schedule" } },
+  { id: "tantara-dec5", date: "Saturday, December 5th", dateISO: "2026-12-05", time: "10:30 AM PT", duration: "1 hr", className: "Movement & Matcha", instructor: "Lisa", location: "Tantara SF, 914 Pacific Ave, San Francisco, CA 94133 (donation-based)", cta: { type: "link", href: "https://partiful.com/e/6U7Uw5wj8zEFg3BcEH2W?c=uajtumqh" } },
 ];
+
+function todayISO(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
 
 type ActiveClass = { name: string; date: string; time: string; location: string };
 
@@ -68,6 +58,12 @@ export function LiveGroupClasses() {
     setActiveClass({ name: row.className, date: row.date, time: row.time, location: row.location });
     setSubmitState("idle");
   }
+
+  const today = todayISO();
+  const currentMonth = today.slice(0, 7); // "YYYY-MM"
+  const visibleRows = ROWS
+    .filter((row) => row.dateISO >= today && row.dateISO.slice(0, 7) === currentMonth)
+    .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -106,57 +102,74 @@ export function LiveGroupClasses() {
 
         <div className="mb-3 text-[0.8rem] uppercase tracking-[0.12em] text-[#555]">Upcoming Classes</div>
 
-        <table className="w-full border-collapse text-[0.95rem]" aria-label="In-person yoga schedule">
-          <thead className="hidden md:table-header-group">
-            <tr>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Date</th>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Time</th>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Duration</th>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Class</th>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Instructor</th>
-              <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Location</th>
-              <th scope="col" className="w-[120px] border-b border-[#ddd] p-3 text-right text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Sign Up</th>
-            </tr>
-          </thead>
-          <tbody className="block md:table-row-group">
-            {ROWS.map((row) => (
-              <tr key={row.id} id={row.id} className="mb-3 block border-b border-[#eee] pb-3 md:mb-0 md:table-row md:border-b md:pb-0">
-                <td className="block whitespace-nowrap py-1 md:table-cell md:p-3">{row.date}</td>
-                <td className="block whitespace-nowrap py-1 md:table-cell md:p-3">{row.time}</td>
-                <td className="block whitespace-nowrap py-1 md:table-cell md:p-3">{row.duration}</td>
-                <td className="block py-1 md:table-cell md:p-3">{row.className}</td>
-                <td className="block py-1 md:table-cell md:p-3">{row.instructor}</td>
-                <td className="block py-1 md:table-cell md:p-3">{row.location}</td>
-                <td className="mt-2 block w-full text-left md:mt-0 md:table-cell md:w-[120px] md:p-3 md:text-right">
-                  {row.cta.type === "modal" && (
-                    <button
-                      type="button"
-                      onClick={() => openClassModal(row)}
-                      className="inline-block whitespace-nowrap rounded-full bg-[var(--color-ink)] px-[1.6rem] py-[0.6rem] text-[0.9rem] lowercase text-white transition-opacity hover:opacity-90"
-                    >
-                      join
-                    </button>
-                  )}
-                  {row.cta.type === "link" && (
-                    <a
-                      href={row.cta.href}
-                      target="_blank"
-                      rel="noopener"
-                      className="inline-block whitespace-nowrap rounded-full bg-[var(--color-ink)] px-[1.6rem] py-[0.6rem] text-[0.9rem] lowercase text-white transition-opacity hover:opacity-90"
-                    >
-                      join
-                    </a>
-                  )}
-                  {row.cta.type === "text" && (
-                    <span className="inline-block text-[0.85rem] text-[var(--color-ink-soft)] md:text-right">
-                      {row.cta.label}
-                    </span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {visibleRows.length === 0 ? (
+          <p className="text-[0.95rem] text-[var(--color-ink-soft)]">
+            No classes scheduled for this month yet — check back soon!
+          </p>
+        ) : (
+          <div className="md:overflow-x-auto">
+            <table className="w-full border-collapse text-[0.95rem] md:table-fixed" aria-label="In-person yoga schedule">
+              <colgroup>
+                <col className="md:w-[18%]" />
+                <col className="md:w-[11%]" />
+                <col className="md:w-[9%]" />
+                <col className="md:w-[14%]" />
+                <col className="md:w-[9%]" />
+                <col className="md:w-[27%]" />
+                <col className="md:w-[12%]" />
+              </colgroup>
+              <thead className="hidden md:table-header-group">
+                <tr>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Date</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Time</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Duration</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Class</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Instructor</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-left text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Location</th>
+                  <th scope="col" className="border-b border-[#ddd] p-3 text-right text-[0.8rem] font-semibold uppercase tracking-[0.1em]">Sign Up</th>
+                </tr>
+              </thead>
+              <tbody className="block md:table-row-group">
+                {visibleRows.map((row) => (
+                  <tr key={row.id} id={row.id} className="mb-3 block border-b border-[#eee] pb-3 md:mb-0 md:table-row md:border-b md:pb-0">
+                    <td className="block whitespace-nowrap py-1 md:table-cell md:whitespace-normal md:p-3">{row.date}</td>
+                    <td className="block whitespace-nowrap py-1 md:table-cell md:p-3">{row.time}</td>
+                    <td className="block whitespace-nowrap py-1 md:table-cell md:p-3">{row.duration}</td>
+                    <td className="block py-1 md:table-cell md:p-3">{row.className}</td>
+                    <td className="block py-1 md:table-cell md:p-3">{row.instructor}</td>
+                    <td className="block break-words py-1 md:table-cell md:p-3">{row.location}</td>
+                    <td className="mt-2 block w-full text-left md:mt-0 md:table-cell md:p-3 md:text-right">
+                      {row.cta.type === "modal" && (
+                        <button
+                          type="button"
+                          onClick={() => openClassModal(row)}
+                          className="inline-block whitespace-nowrap rounded-full bg-[var(--color-ink)] px-5 py-2 text-[0.8rem] lowercase text-white transition-opacity hover:opacity-90 md:px-[1.6rem] md:py-[0.6rem] md:text-[0.9rem]"
+                        >
+                          join
+                        </button>
+                      )}
+                      {row.cta.type === "link" && (
+                        <a
+                          href={row.cta.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="inline-block whitespace-nowrap rounded-full bg-[var(--color-ink)] px-5 py-2 text-[0.8rem] lowercase text-white transition-opacity hover:opacity-90 md:px-[1.6rem] md:py-[0.6rem] md:text-[0.9rem]"
+                        >
+                          join
+                        </a>
+                      )}
+                      {row.cta.type === "text" && (
+                        <span className="inline-block text-[0.85rem] text-[var(--color-ink-soft)] md:text-right">
+                          {row.cta.label}
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
       {activeClass && (
