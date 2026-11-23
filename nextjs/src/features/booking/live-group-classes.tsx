@@ -104,7 +104,7 @@ export function LiveGroupClasses() {
 
         {visibleRows.length === 0 ? (
           <p className="text-[0.95rem] text-[var(--color-ink-soft)]">
-            No classes scheduled for this month yet — check back soon!
+            No classes scheduled for this month yet. Check back soon!
           </p>
         ) : (
           <div className="md:overflow-x-auto">

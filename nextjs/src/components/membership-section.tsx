@@ -50,7 +50,7 @@ export function MembershipSection() {
               plan === "monthly" ? "bg-white text-[var(--color-ink)]" : "text-white/70"
             }`}
           >
-            Monthly — $16.99
+            Monthly: $16.99
           </button>
           <button
             type="button"
@@ -59,7 +59,7 @@ export function MembershipSection() {
               plan === "yearly" ? "bg-white text-[var(--color-ink)]" : "text-white/70"
             }`}
           >
-            Yearly — $169.99 (2 months free)
+            Yearly: $169.99 (2 months free)
           </button>
         </div>
 

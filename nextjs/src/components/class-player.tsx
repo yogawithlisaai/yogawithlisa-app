@@ -132,7 +132,7 @@ export function ClassPlayer({ v, onLocked }: { v: PublicClassVideo; onLocked?: (
       )}
       {status === "locked" && (
         <span className="absolute inset-x-3 bottom-3 z-10 text-center text-xs text-white">
-          Members only — join below to unlock this class.
+          Members only. Join below to unlock this class.
         </span>
       )}
     </button>

@@ -45,8 +45,8 @@ export default function EmailPreferences() {
             Email <em className="italic">preferences</em>
           </h1>
           <p className="mt-4 text-[var(--color-ink-soft)]">
-            Choose whether you'd like to hear from us by email. Account emails — like password
-            resets — will always be sent regardless of this setting.
+            Choose whether you'd like to hear from us by email. Account emails, like password
+            resets, will always be sent regardless of this setting.
           </p>
 
           <div className="mt-9 rounded-[20px] border border-[var(--color-line)] p-8">
