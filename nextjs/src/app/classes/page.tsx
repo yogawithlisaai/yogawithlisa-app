@@ -36,25 +36,25 @@ function ClassCard({ v }: { v: PublicClassVideo }) {
       >
         <ClassPlayer v={v} onLocked={scrollToMembership} />
       </div>
-      <div className="p-6">
-        <div className="mb-3 flex flex-wrap gap-1.5">
-          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/70">
+      <div className="p-4 sm:p-6">
+        <div className="mb-2 flex flex-wrap gap-1 sm:mb-3 sm:gap-1.5">
+          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white/70 sm:px-3 sm:py-1 sm:text-[11px]">
             {v.durationMinutes} min
           </span>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/70">
+          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white/70 sm:px-3 sm:py-1 sm:text-[11px]">
             {v.level}
           </span>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/70">
+          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white/70 sm:px-3 sm:py-1 sm:text-[11px]">
             {v.style}
           </span>
           {v.isFree && (
-            <span className="rounded-full bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[var(--color-ink)]">
+            <span className="rounded-full bg-white px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[var(--color-ink)] sm:px-3 sm:py-1 sm:text-[11px]">
               Free
             </span>
           )}
         </div>
-        <h3 className="font-serif text-xl text-white">{v.title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-white/55">{v.description}</p>
+        <h3 className="font-serif text-base text-white sm:text-xl">{v.title}</h3>
+        <p className="mt-1.5 text-xs leading-relaxed text-white/55 sm:mt-2 sm:text-sm">{v.description}</p>
       </div>
     </div>
   );
@@ -108,7 +108,7 @@ export default function Classes() {
             <h2 className="font-serif text-2xl text-[var(--color-ink)]">Grounded Mornings: Free Series</h2>
             <p className="text-sm text-[var(--color-ink-soft)]">Vertical format · Free forever</p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
             {featured.map((v) => (
               <ClassCard key={v.id} v={v} />
             ))}
