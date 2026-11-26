@@ -21,11 +21,11 @@ function scrollToMembership() {
   document.getElementById("membership")?.scrollIntoView({ behavior: "smooth" });
 }
 
-function ClassCard({ v }: { v: PublicClassVideo }) {
+function ClassCard({ v, className = "" }: { v: PublicClassVideo; className?: string }) {
   return (
     <div
       id={v.id}
-      className="scroll-mt-24 overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)]"
+      className={`scroll-mt-24 overflow-hidden rounded-[20px] border border-[var(--color-line-dark)] bg-[var(--color-dark-card)] ${className}`}
     >
       <div
         className={
@@ -108,9 +108,13 @@ export default function Classes() {
             <h2 className="font-serif text-2xl text-[var(--color-ink)]">Grounded Mornings: Free Series</h2>
             <p className="text-sm text-[var(--color-ink-soft)]">Vertical format · Free forever</p>
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
+          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0">
             {featured.map((v) => (
-              <ClassCard key={v.id} v={v} />
+              <ClassCard
+                key={v.id}
+                v={v}
+                className="w-[70%] flex-shrink-0 snap-center sm:w-auto sm:flex-shrink"
+              />
             ))}
           </div>
         </div>
@@ -163,7 +167,7 @@ export default function Classes() {
         {/* Grid */}
         <section className="bg-white px-5 pb-24 sm:px-6">
           <div className="mx-auto max-w-[1200px]">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
               {filtered.map((v) => (
                 <ClassCard key={v.id} v={v} />
               ))}
