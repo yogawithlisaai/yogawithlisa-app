@@ -66,7 +66,7 @@ export function Footer() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/35">Connect</p>
             <ul className="space-y-3 text-sm text-white/65">
               <li><Link href="/book" className="hover:text-white">Book with Lisa</Link></li>
-              <li><a href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noreferrer" className="hover:text-white">Discovery Call</a></li>
+              <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noreferrer" className="hover:text-white">Discovery Call</a></li>
               <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
               {session && (
                 <li>

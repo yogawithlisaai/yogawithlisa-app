@@ -7,7 +7,7 @@ import { LiveGroupClasses } from "@/features/booking/live-group-classes";
 import { CorporateWellness } from "@/features/booking/corporate-wellness";
 import { RetreatSessions } from "@/features/booking/retreat-sessions";
 
-const CALENDLY_URL = "https://calendly.com/contact-yogawithlisa/30min";
+const CALENDLY_URL = "https://calendly.com/lisaeshunwilson/30min";
 
 type Category = {
   id: string;
